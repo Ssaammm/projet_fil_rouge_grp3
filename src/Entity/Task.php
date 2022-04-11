@@ -28,11 +28,6 @@ class Task
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $statut;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks")
      */
     private $user;
@@ -42,6 +37,11 @@ class Task
      * @ORM\JoinColumn(nullable=false)
      */
     private $client;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Status::class, inversedBy="status")
+     */
+    private $status;
 
     public function getId(): ?int
     {
@@ -72,17 +72,6 @@ class Task
         return $this;
     }
 
-    public function getStatut(): ?string
-    {
-        return $this->statut;
-    }
-
-    public function setStatut(string $statut): self
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {
@@ -104,6 +93,18 @@ class Task
     public function setClient(?Client $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getStatus(): ?Status
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?Status $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }

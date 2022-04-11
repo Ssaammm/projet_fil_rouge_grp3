@@ -1,0 +1,35 @@
+[33mcommit 59d51d66421f8714c562eb92b4395e4851533a08[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: IDZIAK Alexandre <alexandre.idziak@gmail.com>
+Date:   Fri Apr 8 10:42:06 2022 +0200
+
+    Projet commun sprint 1
+
+[33mcommit fd8acfc98eb641690c58dda18f7f5b980b8d902b[m
+Author: sam <smass59260@gmail.com>
+Date:   Thu Apr 7 15:24:37 2022 +0200
+
+    form auth
+
+[33mcommit 058ce4acbc873f362c74fc56eb0873cd1cda08c4[m
+Author: Dumont Benjamin <bnjdmt@gmail.com>
+Date:   Thu Apr 7 14:33:07 2022 +0200
+
+    création des entités , des tables et de leurs relations
+
+[33mcommit fb005283648a2d0ce58d59b89dededc8e2a2fda3[m
+Author: anna raach <annagraph92@gmail.com>
+Date:   Thu Apr 7 13:11:55 2022 +0200
+
+    creation du projet et ajout du bootsrap template base.html.twig
+
+[33mcommit d4e4e144740e029b99cb93ee6fb62ea315a09002[m
+Author: anna raach <annagraph92@gmail.com>
+Date:   Thu Apr 7 10:02:00 2022 +0200
+
+    Add webapp packages
+
+[33mcommit 34c593b4ba552653e5d1e241023fd4f85266efd1[m
+Author: anna raach <annagraph92@gmail.com>
+Date:   Thu Apr 7 10:00:35 2022 +0200
+
+    Add initial set of files
