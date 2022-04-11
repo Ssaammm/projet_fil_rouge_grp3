@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Client;
+use App\Entity\Status;
 use App\Entity\Task;
 use App\Entity\User;
 
@@ -48,24 +49,38 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        
+        $status1 = new Status();
+
+            $status1
+            ->setEtat("NON ALLOUER");
+
+            $status2 = new Status();
+
+            $status2
+            ->setEtat("ALLOUER");
+
+            $status3 = new Status();
+
+            $status3
+            ->setEtat("TERMINEE");
 
 
         for ($i = 0; $i < 15; $i++) {
             $client = new Client();
             $task = new Task();
+
             $task
             ->setType($faker->randomElement(['GROSSE','PETITE','MOYENNE']))
             ->setDescription($faker->text())
             ->setClient($client)
-            ->setStatut($faker->randomElement(['NON PRISE']));
+            ->setStatus($status1);
 
             $task2 = new Task();
             $task2
             ->setType($faker->randomElement(['GROSSE','PETITE','MOYENNE']))
             ->setDescription($faker->text())
             ->setClient($client)
-            ->setStatut($faker->randomElement(['NON PRISE']));
+            ->setStatus($status1);
             
             $client
             ->setPrenom($faker->lastName)
@@ -76,6 +91,9 @@ class AppFixtures extends Fixture
             $manager->persist($client);
             $manager->persist($task);
             $manager->persist($task2);
+            $manager->persist($status1);
+            $manager->persist($status2);
+            $manager->persist($status3);
             }
 
     $manager->flush();
