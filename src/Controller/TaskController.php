@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -100,5 +101,18 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('app_task_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    
+    /**
+     * @Route("/task/{id}", name="app_task_alloueTask")
+     */
+    public function alloueTask(Task $tasks, EntityManagerInterface $manager): Response{
+
+        $task = $tasks->setUser($this->getUser());
+
+        $manager->persist($task);
+        $manager->flush($task);
+
+        return $this->redirectToRoute('app_task_affichage', [], Response::HTTP_SEE_OTHER);
+
+    }
+   
 }
