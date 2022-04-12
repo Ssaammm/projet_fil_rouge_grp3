@@ -5,8 +5,9 @@
 
 {% block body %}
 
-
-			<h1>taches non assignées</h1>
+<div class="container">
+  <div class="row">
+    <h1>taches non assignées</h1>
 			{% for user in tasks|filter(user => user.user == NULL) %}
 
 				<div class="card text-dark bg-danger m-5" style="max-width: 18rem;">
@@ -16,13 +17,20 @@
 						<h5 class="card-title">Description:
 						</h5>
 						<p class="card-text">{{ (user.description) }}</p>
-					</div>
+            </div>
+            
+            <div class="footer mb-3">
+              <a href="{{ path('app_task_alloueTask', { 'id': user.id  }) }}" type="button" class="btn btn-outline-primary">Alloué</a>
+            
+            </div>
 				</div>
 
 			{% endfor %}
+  </div>
+</div>
+			
 
-		</div>
-	</div>
+
 
 
 	<div class="container">
