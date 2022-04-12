@@ -120,5 +120,19 @@ class TaskController extends AbstractController
         return $this->redirectToRoute('app_task_affichage', [], Response::HTTP_SEE_OTHER);
 
     }
+
+    /**
+     * @Route("/task/termine/{id}", name="app_task_termineTask")
+     */
+    public function termineTask(ManagerRegistry $doctrine, Task $tasks, EntityManagerInterface $manager) :Response {
+        $task = $tasks->setUser($this->getUser())
+                      ->setStatus($doctrine->getRepository(Status::class)->find(3));
+
+                      
+        $manager->persist($task);
+        $manager->flush($task);
+
+        return $this->redirectToRoute('app_task_affichage', [], Response::HTTP_SEE_OTHER);
+    }
    
 }
