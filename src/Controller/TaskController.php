@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Task;
+use App\Entity\Status;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -104,10 +106,14 @@ class TaskController extends AbstractController
     /**
      * @Route("/task/{id}", name="app_task_alloueTask")
      */
-    public function alloueTask(Task $tasks, EntityManagerInterface $manager): Response{
+    public function alloueTask(ManagerRegistry $doctrine, Task $tasks, EntityManagerInterface $manager): Response{
 
-        $task = $tasks->setUser($this->getUser());
+        
 
+        $task = $tasks->setUser($this->getUser())
+                      ->setStatus($doctrine->getRepository(Status::class)->find(2));
+
+                      
         $manager->persist($task);
         $manager->flush($task);
 
