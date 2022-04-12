@@ -15,7 +15,12 @@
   <div class="card-body">
     <h5 class="card-title">Description: </h5>
     <p class="card-text">{{ (user.description) }}</p>
-  </div>
+    </div>
+    <div class="footer mb-3">
+      <a href="{{ path('app_task_alloueTask', { 'id': user.id  }) }}" type="button" class="btn btn-outline-primary">Alloué</a>
+    </div>
+
+  
 </div>
 
 {% endfor %}
