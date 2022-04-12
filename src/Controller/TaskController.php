@@ -46,6 +46,20 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @Route("/affichage", name="app_task_affichage", methods={"GET"})
+     */
+    public function affichage() : Response {
+
+        $repo = $this->getDoctrine()->getRepository(Task::class);
+        $task = $repo->findAll();
+
+        return $this->render('affichage_taches.html.twig', [
+            'tasks' => $task
+        ]);
+
+    }
+
+    /**
      * @Route("/{id}", name="app_task_show", methods={"GET"})
      */
     public function show(Task $task): Response
@@ -85,4 +99,6 @@ class TaskController extends AbstractController
 
         return $this->redirectToRoute('app_task_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    
 }
