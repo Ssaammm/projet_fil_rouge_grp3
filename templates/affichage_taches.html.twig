@@ -5,8 +5,6 @@
 
 {% block body %}
 
-	<div class="container">
-		<div class="row">
 
 			<h1>taches non assignées</h1>
 			{% for user in tasks|filter(user => user.user == NULL) %}
