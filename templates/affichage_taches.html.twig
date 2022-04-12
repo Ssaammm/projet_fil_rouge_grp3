@@ -1,52 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}affichage des tâches{% endblock %}
+{% block title %}affichage des tâches
+{% endblock %}
 
 {% block body %}
 
- <div class="container">
-    <div class="row">
-      
-          
-{% for user in tasks|filter(user => user.user == NULL) %}
-     
-    <div class="card text-dark bg-danger m-5" style="max-width: 18rem;">
-  <div class="card-header">tâche n° {{ (user.id) }}</div>
-  <div class="card-body">
-    <h5 class="card-title">Description: </h5>
-    <p class="card-text">{{ (user.description) }}</p>
-  </div>
-</div>
+	<div class="container">
+		<div class="row">
 
-{% endfor %}
+			<h1>taches non assignées</h1>
+			{% for user in tasks|filter(user => user.user == NULL) %}
 
-    </div>
-  </div>
+				<div class="card text-dark bg-danger m-5" style="max-width: 18rem;">
+					<div class="card-header">tâche n°
+						{{ (user.id) }}</div>
+					<div class="card-body">
+						<h5 class="card-title">Description:
+						</h5>
+						<p class="card-text">{{ (user.description) }}</p>
+					</div>
+				</div>
 
-{% for user in tasks|filter(user => user.user != NULL) %}
+			{% endfor %}
 
-<div class="card text-white bg-primary m-5" style="max-width: 18rem;">
-  <div class="card-header">tâche n° {{ (user.id) }}</div>
-  <div class="card-body">
-    <h5 class="card-title">Description: </h5>
-    <p class="card-text">{{ (user.description) }}</p>
-  </div>
-</div>
+		</div>
+	</div>
 
-{% endfor %}
 
-{# {% for user in tasks|filter(user => user.status_id == 3) %}
+	<div class="container">
+		<div class="row">
+			<h1>taches assignées</h1>
+			{% for user in tasks|filter(user => user.user != NULL) %}
 
-<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+				<div class="card text-white bg-primary m-5" style="max-width: 18rem;">
+					<div class="card-header border-0">tâche n°
+						{{ (user.id) }}</div>
+					<div class="card-body">
+						<h5 class="card-title">Description:
+						</h5>
+						<p class="card-text">{{ (user.description) }}</p>
+					</div>
+					<div class="card-footer bg-dark">{{ (user.user.nom) }}
+						{{ (user.user.prenom) }}</div>
+				</div>
 
-{% endfor %} #}
+			{% endfor %}
+		</div>
+	</div>
 
+
+	<div class="container">
+		<div class="row">
+			<h1>taches perso</h1>
+			{% for user in tasks|filter(user => user.user == app.user) %}
+
+				<div class="card text-white bg-success m-5" style="max-width: 18rem;">
+					<div class="card-header">tâche n°
+						{{ (user.id) }}</div>
+					<div class="card-body">
+						<h5 class="card-title">Description:
+						</h5>
+						<p class="card-text">{{ (user.description) }}</p>
+					</div>
+					<div class="card-footer bg-dark">{{ (user.user.nom) }}
+						{{ (user.user.prenom) }}</div>
+				</div>
+
+			{% endfor %}
+		</div>
+	</div>
 
 
 {% endblock %}
