@@ -33,7 +33,7 @@
 				<hr>
 				<ul class="nav nav-pills flex-column mb-auto">
 					<li class="nav-item">
-						<a href="#" class="nav-link active" aria-current="page">
+						<a href="#" class="nav-link text-white" aria-current="page">
 							<i class="fa fa-home"></i>
 							<span class="ms-2">Home</span>
 						</a>
@@ -41,7 +41,13 @@
 					<li>
 						<a href="{{ path('app_task_new') }}" class="nav-link text-white">
 							<i class="fa fa-dashboard"></i>
-							<span class="ms-2">Dashboard</span>
+							<span class="ms-2">Nouvelle opération</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('app_task_affichage') }}" class="nav-link text-white">
+							<i class="fa fa-dashboard"></i>
+							<span class="ms-2">Affichage des opérations</span>
 						</a>
 					</li>
 				</ul>
@@ -73,75 +79,11 @@
 			
 				{% block body %}{% endblock %}
 			
-
-			
 		</div>
 	</div>	
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script>
 
-		$(document).ready(function () {
-
-  // fonction qui cache le champs select  
-  function Display_none() {
-    document.getElementById("task_client").style.display = "none";
-  };
-
-  // fonction qui affiche les change select
-  function Display_block() {
-    document.getElementById("task_client").style.display = "block";
-  };
-
-
-  //selection du champs form adresse
-  let adresse = document.querySelector('#task_client');
-
-  // fonction qui ce lance a chaque fois qu'on appuie sur une touche dans le champ adresse
-  $(adresse).keypress(function () {
-
-    //valeur du champ adresse
-    let test = $(this).val();
-
-
-    //affichage de l'url dans la console aprés chaque touche
-    console.log(url);
-
-    //appel de l'api Fetch
-    fetch(url, { method: 'get' }).then(response => response.json()).then(result => {
-
-      // affichage des resultat aprés chaque touche dans la console 
-      console.log(result.features);
-
-
-      //afficher directement le select avec 5 proposition
-      $('#monselect').attr('size', 5);
-
-      // remplissage de la div select a chaque résultat             
-      document.getElementById('monselect').innerHTML =
-        `<option value="` + result.features[0].properties.label + `">"` + result.features[0].properties.label + `"</option>
-                <option value="`+ result.features[1].properties.label + `">"` + result.features[1].properties.label + `"</option>
-        <option value="`+ result.features[2].properties.label + `">"` + result.features[2].properties.label + `"</option>
-        <option value="`+ result.features[3].properties.label + `">"` + result.features[3].properties.label + `"</option>
-        <option value="`+ result.features[4].properties.label + `">"` + result.features[4].properties.label + `"</option>`;
-      
-        //fonction qui remplis le champs adresse aprés un clique sur un select
-      $('#monselect').change(function () {
-        $("#task_client").val(this.value);
-        
-      });
-
-
-    });
-
-
-  });
-
-
-});
-
-		
-		</script>
 
 	</body>
 </html>

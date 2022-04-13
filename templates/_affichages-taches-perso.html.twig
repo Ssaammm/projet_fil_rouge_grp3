@@ -1,0 +1,31 @@
+
+
+{% block body %}
+
+
+	<div class="row">
+		<h1>taches perso</h1>
+		{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
+
+			<div class="card text-white bg-success m-5" style="max-width: 18rem;">
+				<div class="card-header">tâche n°
+					{{ (user.id) }}</div>
+				<div class="card-body">
+					<h5 class="card-title">Description:
+					</h5>
+					<p class="card-text">{{ (user.description) }}</p>
+				</div>
+				<div class="card-footer bg-dark">{{ (user.user.nom) }}
+					{{ (user.user.prenom) }}
+				</div>
+				<div class="footer mb-3">
+					<a href="{{ path('app_task_termineTask', { 'id': user.id }) }}" type="button" class="btn btn-outline-primary">Terminé</a>
+				</div>
+			</div>
+
+		{% endfor %}
+	</div>
+
+
+{% endblock %}
+

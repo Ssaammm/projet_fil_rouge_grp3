@@ -5,79 +5,12 @@
 
 {% block body %}
 
-	
-		<div class="row">
-			<h1>taches non assignées</h1>
-			{% for user in tasks|filter(user => user.user == NULL) %}
+{% include "_affichage_taches-non-allouees.html.twig" %}
 
-				<div class="card text-dark bg-light m-5" style="max-width: 18rem;">
-					<div class="card-header">tâche n°
-						{{ (user.id) }}</div>
-					<div class="card-body">
-						<h5 class="card-title">Description:
-						</h5>
-						<p class="card-text">{{ (user.description) }}</p>
-					</div>
+{% include "_affichage-taches_allouees.html.twig" %}
 
-					<div class="footer mb-3">
-						<a href="{{ path('app_task_alloueTask', { 'id': user.id }) }}" type="button" class="btn btn-primary">Alloué</a>
+{% include "_affichages-taches-perso.html.twig" %}
 
-					</div>
-				</div>
-
-			{% endfor %}
-		</div>
-	
-
-
-	
-		<div class="row">
-			<h1>taches assignées</h1>
-			{% for user in tasks|filter(user => user.user != NULL) %}
-
-				<div class="card text-white bg-primary m-5" style="max-width: 18rem;">
-					<div class="card-header border-0">tâche n°
-						{{ (user.id) }}
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Description:
-						</h5>
-						<p class="card-text">{{ (user.description) }}</p>
-					</div>
-					<div class="card-footer bg-dark">{{ (user.user.nom) }}
-						{{ (user.user.prenom) }}</div>
-				</div>
-
-
-			{% endfor %}
-		</div>
-	
-
-
-
-		<div class="row">
-			<h1>taches perso</h1>
-			{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
-
-				<div class="card text-white bg-success m-5" style="max-width: 18rem;">
-					<div class="card-header">tâche n°
-						{{ (user.id) }}</div>
-					<div class="card-body">
-						<h5 class="card-title">Description:
-						</h5>
-						<p class="card-text">{{ (user.description) }}</p>
-					</div>
-					<div class="card-footer bg-dark">{{ (user.user.nom) }}
-						{{ (user.user.prenom) }}
-					</div>
-					<div class="footer mb-3">
-						<a href="{{ path('app_task_termineTask', { 'id': user.id }) }}" type="button" class="btn btn-outline-primary">Terminé</a>
-					</div>
-				</div>
-
-			{% endfor %}
-		</div>
-	
 
 
 {% endblock %}
