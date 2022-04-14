@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ChiffreAffaire;
 use App\Entity\Client;
 use App\Entity\Task;
 use App\Entity\Status;
@@ -130,9 +131,30 @@ class TaskController extends AbstractController
         $task = $tasks->setUser($this->getUser())
                       ->setStatus($doctrine->getRepository(Status::class)->find(3));
 
-                      
         $manager->persist($task);
+        
+
+        if ($tasks->getType()=="PETITE") {
+            $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
+            $chiffre->setNbPetite($chiffre->getNbPetite()+1);
+            $manager->persist($chiffre);
+
+        }
+        elseif ($tasks->getType()=="MOYENNE") {
+            $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
+            $chiffre->setNbMoyen($chiffre->getNbMoyen()+1);
+            $manager->persist($chiffre);
+
+        }
+        elseif ($tasks->getType()=="GROSSE") {
+            $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
+            $chiffre->setNbGrande($chiffre->getNbGrande()+1);
+            $manager->persist($chiffre);
+
+        }
+        
         $manager->flush($task);
+        $manager->flush($chiffre);
 
         return $this->redirectToRoute('app_task_affichage', [], Response::HTTP_SEE_OTHER);
     }
