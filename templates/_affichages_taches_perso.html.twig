@@ -14,6 +14,8 @@
 					<h5 class="card-title">Description:
 					</h5>
 					<p class="card-text">{{ (user.description) }}</p>
+					<p class="card-text"> Nom: {{ (user.client.nom) }} {{ (user.client.prenom) }}</p>
+					<p class="card-text">type: {{ (user.type) }}</p>
 				</div>
 				<div class="card-footer bg-dark">{{ (user.user.nom) }}
 					{{ (user.user.prenom) }}
