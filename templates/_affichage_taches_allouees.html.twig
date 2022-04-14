@@ -7,6 +7,7 @@
 		<h1>Opérations en cours</h1>
 		{% for user in tasks|filter(user => user.user != NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
 
+
 			<div class="card text-white bg-primary m-5" style="max-width: 18rem;">
 				<div class="card-header border-0"> Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}
 				</div>
@@ -14,7 +15,8 @@
 					<h5 class="card-title">Description:
 					</h5>
 					<p class="card-text">{{ (user.description) }}</p>
-					<p class="card-text">type: {{ (user.type) }}</p>
+					<p class="card-text">Type: {{ (user.type) }}</p>
+					<p class="card-text">Prix: {% if user.type == "PETITE" %}1000 €{% endif %}{% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
 				</div>
 				<div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
 					{{ (user.user.prenom) }}</div>
