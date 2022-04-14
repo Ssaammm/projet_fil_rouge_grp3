@@ -23,7 +23,7 @@ class ChiffreAffaireController extends AbstractController
         $chiffre->setTotalGrande($chiffre->getNbGrande()*10000);
 
         $totalChiffre = $chiffre->getNbPetite()+$chiffre->getNbMoyen()+$chiffre->getNbGrande();
-        $chiffre->setPourcPetite(($chiffre->getNbPetite()/$totalChiffre)*100);
+        $chiffre->setPourcPetite(number_format((($chiffre->getNbPetite()/$totalChiffre)*100),2));
         $chiffre->setPourcMoyen(($chiffre->getNbMoyen()/$totalChiffre)*100);
         $chiffre->setPourcGrande(($chiffre->getNbGrande()/$totalChiffre)*100);
 
@@ -35,7 +35,7 @@ class ChiffreAffaireController extends AbstractController
         return $this->render('chiffre_affaire/index.html.twig', [
             'chiffre' => $chiffre,
             'totalAffaire' => $totalAffaire,
-
+            
 
         ]);
     }

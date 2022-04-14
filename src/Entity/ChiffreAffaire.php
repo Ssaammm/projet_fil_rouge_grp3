@@ -33,17 +33,17 @@ class ChiffreAffaire
     private $nbGrande;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $pourcPetite;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $pourcMoyen;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $pourcGrande;
 
@@ -103,36 +103,36 @@ class ChiffreAffaire
         return $this;
     }
 
-    public function getPourcPetite(): ?int
+    public function getPourcPetite(): ?float
     {
         return $this->pourcPetite;
     }
 
-    public function setPourcPetite(int $pourcPetite): self
+    public function setPourcPetite(float $pourcPetite): self
     {
         $this->pourcPetite = $pourcPetite;
 
         return $this;
     }
 
-    public function getPourcMoyen(): ?int
+    public function getPourcMoyen(): ?float
     {
         return $this->pourcMoyen;
     }
 
-    public function setPourcMoyen(int $pourcMoyen): self
+    public function setPourcMoyen(float $pourcMoyen): self
     {
         $this->pourcMoyen = $pourcMoyen;
 
         return $this;
     }
 
-    public function getPourcGrande(): ?int
+    public function getPourcGrande(): ?float
     {
         return $this->pourcGrande;
     }
 
-    public function setPourcGrande(int $pourcGrande): self
+    public function setPourcGrande(float $pourcGrande): self
     {
         $this->pourcGrande = $pourcGrande;
 
