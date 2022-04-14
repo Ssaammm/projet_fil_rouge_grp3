@@ -2,20 +2,18 @@
 
 
 	<div class="row">
-		<h1>tâches terminées</h1>
-		{% for user in tasks|filter( user => user.status.id == 3)  %}
+		<h1>Opérations terminées</h1>
+		{% for user in tasks|filter( user => user.status.id == 3)|sort((a , b) => a.client.nom <=> b.client.nom)  %}
 
 			<div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
-				<div class="card-header">tâche n°
-					{{ (user.id) }}</div>
+				<div class="card-header"> Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</div>
 				<div class="card-body">
 					<h5 class="card-title">Description:
 					</h5>
 					<p class="card-text">{{ (user.description) }}</p>
-					<p class="card-text"> Nom: {{ (user.client.nom) }} {{ (user.client.prenom) }}</p>
 					<p class="card-text">type: {{ (user.type) }}</p>
 				</div>
-				<div class="card-footer bg-dark">{{ (user.user.nom) }}
+				<div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
 					{{ (user.user.prenom) }}
 				</div>
 			</div>
