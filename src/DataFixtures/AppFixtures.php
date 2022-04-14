@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\ChiffreAffaire;
 use App\Entity\Client;
 use App\Entity\Status;
 use App\Entity\Task;
@@ -30,6 +31,27 @@ class AppFixtures extends Fixture
     {
 
         $faker = Faker\Factory::create('fr_FR');
+
+        
+        //Fixtures pour chiffreAffaire
+        for ($i=0; $i <1 ; $i++) { 
+            $chiffreAffaire = new ChiffreAffaire();
+
+            $chiffreAffaire
+            ->setNbPetite(0)
+            ->setNbMoyen(0)
+            ->setNbGrande(0)
+            ->setPourcPetite(0)
+            ->setPourcMoyen(0)
+            ->setPourcGrande(0)
+            ->setTotalPetite(0)
+            ->setTotalMoyen(0)
+            ->setTotalGrande(0);
+
+            $manager->persist($chiffreAffaire);
+        }
+
+        $manager->flush();
 
         
             for ($i = 0; $i < 10; $i++) {
