@@ -3,7 +3,7 @@
 
 	<div class="row">
 		<h1>tâches terminées</h1>
-		{% for user in tasks|filter( user => user.user == app.user and user.status.id == 3)  %}
+		{% for user in tasks|filter( user => user.status.id == 3)  %}
 
 			<div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
 				<div class="card-header">tâche n°
