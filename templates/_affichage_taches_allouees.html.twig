@@ -16,7 +16,7 @@
 					</h5>
 					<p class="card-text">{{ (user.description) }}</p>
 					<p class="card-text">Type: {{ (user.type) }}</p>
-					<p class="card-text">Prix: {% if user.type == "PETITE" %}1000 €{% endif %}{% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
+					<p class="card-text">Tarification: {% if user.type == "PETITE" %}1000 €{% endif %}{% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
 				</div>
 				<div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
 					{{ (user.user.prenom) }}</div>
