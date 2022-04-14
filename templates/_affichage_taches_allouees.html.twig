@@ -4,7 +4,7 @@
 
 
 	<div class="row">
-		<h1>tâches assignées</h1>
+		<h1>tâches en cours</h1>
 		{% for user in tasks|filter(user => user.user != NULL) %}
 
 			<div class="card text-white bg-primary m-5" style="max-width: 18rem;">
