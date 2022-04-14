@@ -4,7 +4,7 @@
 
 
 	<div class="row">
-		<h1>Mes tâches</h1>
+		<h1>Mes opérations</h1>
 		{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
 
 			<div class="card text-white bg-success m-5" style="max-width: 18rem;">
@@ -16,6 +16,7 @@
 					<p class="card-text">{{ (user.description) }}</p>
 					<p class="card-text"> Nom: {{ (user.client.nom) }} {{ (user.client.prenom) }}</p>
 					<p class="card-text">type: {{ (user.type) }}</p>
+					<p class="card-text">Prix: {% if user.type == "PETITE" %}1000 €{% endif %}{% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
 				</div>
 				<div class="card-footer bg-dark">{{ (user.user.nom) }}
 					{{ (user.user.prenom) }}
