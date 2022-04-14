@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CHIFFRE D'AFFAIRE{% endblock %}
+
+{% block body %}
+
+<h2>historique tache terminée</h2>
+<br>
+<p>nombre de petite tache: {{ chiffre.nbpetite }} </p>
+<p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
+<p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
+<br>
+<p>pourcentage tache petite: {{ chiffre.pourcpetite }} % </p>
+<p>pourcentage tache moyenne: {{ chiffre.pourcmoyen }} % </p>
+<p>pourcentage tache grande: {{ chiffre.pourcgrande }} % </p>
+<br>
+<p>total tache petite: {{ chiffre.totalpetite }} € </p>
+<p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
+<p>total tache grande: {{ chiffre.totalgrande }} € </p>
+<br>
+
+<p>Total chiffre d'affaire {{ totalAffaire }}</p>
+
+
+
+{% endblock %}
