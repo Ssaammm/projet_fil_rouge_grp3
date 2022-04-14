@@ -4,7 +4,7 @@
 
 
 	<div class="row">
-		<h1>tâches perso</h1>
+		<h1>Mes tâches</h1>
 		{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
 
 			<div class="card text-white bg-success m-5" style="max-width: 18rem;">
