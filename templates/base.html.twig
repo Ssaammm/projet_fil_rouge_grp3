@@ -69,6 +69,12 @@
 								<span class="ms-2">Affichage tâches terminées</span>
 							</a>
 						</li>
+						<li>
+							<a href="{{ path('app_chiffre_affaire') }}" class="nav-link text-white">
+								<i class="fa fa-dashboard"></i>
+								<span class="ms-2">Chiffre d'Affaire</span>
+							</a>
+						</li>
 					{% endif %}
 
 				</ul>
@@ -86,7 +92,7 @@
 								<hr class="dropdown-divider">
 							</li>
 							<li>
-								<a class="dropdown-item" href="#">Sign out</a>
+								<a class="dropdown-item" href="{{ path('app_logout') }}">Sign out</a>
 							</li>
 						</ul>
 					</div>
