@@ -5,17 +5,15 @@
 
 
 	<div class="row">
-		<h1>tâches non assignées</h1>
-		{% for user in tasks|filter(user => user.user == NULL) %}
+		<h1>Opérations non assignées</h1>
+		{% for user in tasks|filter(user => user.user == NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
 
 			<div class="card text-dark bg-light m-5" style="max-width: 18rem;">
-				<div class="card-header">tâche n°
-					{{ (user.id) }}</div>
+				<div class="card-header"> Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</div>
 				<div class="card-body">
 					<h5 class="card-title">Description:
 					</h5>
 					<p class="card-text">{{ (user.description) }}</p>
-					<p class="card-text"> Nom: {{ (user.client.nom) }} {{ (user.client.prenom) }}</p>
 					<p class="card-text">type: {{ (user.type) }}</p>
 				</div>
 

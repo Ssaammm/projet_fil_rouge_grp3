@@ -53,20 +53,20 @@
 					<li>
 						<a href="{{ path('app_task_affichage_perso') }}" class="nav-link text-white">
 							<i class="fa fa-dashboard"></i>
-							<span class="ms-2">Mes tâches</span>
+							<span class="ms-2">Mes opérations</span>
 						</a>
 					</li>
 					{% if is_granted('ROLE_EXPERT') == true %}
 						<li>
 							<a href="{{ path('app_register') }}" class="nav-link text-white">
 								<i class="fa fa-dashboard"></i>
-								<span class="ms-2">Enregistrer un nouvel utilisateur</span>
+								<span class="ms-2">Nouvel utilisateur</span>
 							</a>
 						</li>
 						<li>
 							<a href="{{ path('app_task_affichage_terminees') }}" class="nav-link text-white">
 								<i class="fa fa-dashboard"></i>
-								<span class="ms-2">Affichage tâches terminées</span>
+								<span class="ms-2">Opérations terminées</span>
 							</a>
 						</li>
 					{% endif %}
