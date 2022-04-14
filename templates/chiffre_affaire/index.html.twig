@@ -10,9 +10,9 @@
 <p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
 <p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
 <br>
-<p>pourcentage tache petite: {{ chiffre.pourcpetite }} % </p>
-<p>pourcentage tache moyenne: {{ chiffre.pourcmoyen }} % </p>
-<p>pourcentage tache grande: {{ chiffre.pourcgrande }} % </p>
+<p>pourcentage tache petite: {{ chiffre.pourcpetite |number_format(2, '.', ',')}} % </p>
+<p>pourcentage tache moyenne: {{ chiffre.pourcmoyen |number_format(2, '.', ',') }} % </p>
+<p>pourcentage tache grande: {{ chiffre.pourcgrande |number_format(2, '.', ',') }} % </p>
 <br>
 <p>total tache petite: {{ chiffre.totalpetite }} € </p>
 <p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
@@ -20,6 +20,8 @@
 <br>
 
 <p>Total chiffre d'affaire {{ totalAffaire }}</p>
+
+
 
 
 
