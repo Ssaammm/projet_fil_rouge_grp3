@@ -22,7 +22,9 @@
 
 	<body>
 
-
+		{# Condition pour que la navbar s'affiche uniquement lorsqu'on se connecte (if app.user) #}
+		{% if app.user %}
+		
 		<div class="d-flex flex-row">
 
 			<div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark sticky-top" style="width: 250px;">
@@ -56,6 +58,8 @@
 							<span class="ms-2">Mes opérations</span>
 						</a>
 					</li>
+
+
 					{% if is_granted('ROLE_EXPERT') == true %}
 						<li>
 							<a href="{{ path('app_register') }}" class="nav-link text-white">
@@ -76,8 +80,10 @@
 							</a>
 						</li>
 					{% endif %}
-
 				</ul>
+				{% endif %}
+
+				
 				<hr>
 				{% if app.user %}
 					<div class="dropdown">
@@ -98,6 +104,7 @@
 					</div>
 				{% endif %}
 			</div>
+
 
 			<div>
 
