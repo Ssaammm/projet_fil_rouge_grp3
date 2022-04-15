@@ -18,6 +18,8 @@ class ChiffreAffaireController extends AbstractController
     {
         $chiffre = $ChiffreAffaire->find(1);
 
+        if ($chiffre->getNbPetite() !== 0 || $chiffre->getNbMoyen() !== 0 || $chiffre->getNbGrande() !== 0) {
+
         $chiffre->setTotalPetite($chiffre->getNbPetite()*1000);
         $chiffre->setTotalMoyen($chiffre->getNbMoyen()*2500);
         $chiffre->setTotalGrande($chiffre->getNbGrande()*10000);
@@ -29,6 +31,8 @@ class ChiffreAffaireController extends AbstractController
 
         $manager->persist($chiffre);
         $manager->flush($chiffre);
+    
+    }
 
         $totalAffaire = $chiffre->getTotalPetite()+$chiffre->getTotalMoyen()+$chiffre->getTotalGrande();
 
