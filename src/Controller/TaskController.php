@@ -2,10 +2,6 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
-use App\Entity\ChiffreAffaire;
-=======
->>>>>>> 18c0e305f018d0cbf16d00f03c095d7cf5524259
 use App\Entity\Client;
 use App\Entity\Task;
 use App\Entity\Status;
