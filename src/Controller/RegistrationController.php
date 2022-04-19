@@ -54,6 +54,7 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
             'btnmodif' => $user->getId() == null,
+            'user' => $user
         ]);
     }
 }

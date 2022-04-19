@@ -17,11 +17,16 @@
             label: 'Password'
             }) }}
     {{ form_row(registrationForm.agreeTerms) }}
-    <button type="submit" class="btn btn-primary">{% if btnmodif %}S'inscrire {% else %} Modifier {% endif %}</button>
+    <button type="submit" class="btn btn-primary mt-3">{% if btnmodif %}S'inscrire {% else %} Appliquer la modification {% endif %}</button>
 
     {{ form_end(registrationForm) }}
 
-    
+    {% if not btnmodif %}
+    <form method="post" action="{{ path('app_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer cette utilisateur (pas de retour en arrière possible)?');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+        <button class="btn btn-danger mt-3">Supprimer l'utilisateur</button>
+    </form>
+    {% endif %}
 
 
 {% endblock %}
