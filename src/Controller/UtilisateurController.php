@@ -23,7 +23,7 @@ class UtilisateurController extends AbstractController
     }
 
     /**
-     * @Route("/uti", name="app_utilisateurk")
+     * @Route("/uti", name="app_uti")
      */
     public function user(UserRepository $user)
     {
