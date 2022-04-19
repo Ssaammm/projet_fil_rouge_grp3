@@ -8,8 +8,7 @@
 		{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
 
 			<div class="card text-white bg-success m-5" style="max-width: 18rem;">
-				<div class="card-header">tâche n°
-					{{ (user.id) }}</div>
+				<div class="card-header">Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</div>
 				<div class="card-body">
 					<h5 class="card-title">Description:
 					</h5>
