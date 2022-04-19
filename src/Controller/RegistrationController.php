@@ -18,11 +18,15 @@ class RegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
+     * @Route("/register/{id}/edit", name="app_register_edit")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+    public function register(User $user=null, Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('ROLE_EXPERT');
-        $user = new User();
+        if (!$user) {
+            $user = new User();
+        }
+        
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
@@ -39,16 +43,17 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
+            // return $guardHandler->authenticateUserAndHandleSuccess(
+            //     $user,
+            //     $request,
+            //     $authenticator,
+            //     'main' // firewall name in security.yaml
+            // );
         }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            'btnmodif' => $user->getId() == null,
         ]);
     }
 }
