@@ -7,6 +7,9 @@ use App\Entity\Task;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,10 +19,16 @@ class TaskType extends AbstractType
     {
         $client = new Client;
         $builder
-            ->add('type')
+
+            ->add('client', EntityType::class, ['class'=>Client::class,
+            'choice_label'=>'prenom'])
+            ->add('type', ChoiceType::class, [
+                'choices'  => [
+                    'Petite' => "PETITE",
+                    'Moyenne' => "MOYENNE",
+                    'Grosse' => "GROSSE",
+                ]])
             ->add('description')
-            ->add('client', TextareaType::class, [
-            ]);
         ;
     }
 
