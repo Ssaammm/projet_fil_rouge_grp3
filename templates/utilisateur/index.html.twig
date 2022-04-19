@@ -2,33 +2,79 @@
 
 {% block title %}Hello UtilisateurController!{% endblock %}
 
+{% block stylesheets %}
+  {# {{ encore_entry_link_tags('app') }} #}
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+{% endblock %}  
+
+{% block javascripts %}
+			{# {{ encore_entry_script_tags('app') }} #}
+      {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> #}
+      
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
+  
+
+{% endblock %}
+
+
+
 {% block body %}
 
 <h1>UTILISATEURS</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">NOM</th>
-      <th scope="col">PRENOM</th>
-      <th scope="col">ROLE</th>
-      <th scope="col">E-MAIL</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for user in users %}
-    <tr>
-      <th scope="row">{{ user.id }}</th>
-      <td>{{ user.nom }}</td>
-      <td>{{ user.prenom }}</td>
-      <td>{{ user.roles | join }}</td>
-      <td>{{ user.email }}</td>
-      <td><a href="{{ path('app_register_edit', {'id': user.id}) }}" type="button" class="btn btn-secondary">Modifier</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
+<table id="mtable" class="table table-succe table-striped">
 </table>
 
+{% block javascript %}  
+  <script type="text/javascript">
+  $(document).ready(function() {
+   
+  $.ajax({
+  
+    type: "GET",
+    url: 'http://localhost:8000/uti',
+    
+    success: function (obj, textstatus) {
+  
+            $('#mtable').DataTable({
+                data: obj,
+                oLanguage:{
+                  sSearch: "Rechercher"
+                },
+                columns: [
+                    { data: 'id', title: "id" },
+                    { data: 'nom', title:"nom" },
+                    { data: 'prenom', title:"prenom"},
+                    { data: 'email', title:"email"},
+                    {
+                      data: "id",
+                      render: function (data) {
+
+                      url = "/register/"+data+"/edit";
+                      return '<a href='+url+' type="button" class="btn btn-primary">Modifier</a>';
+                      
+                    }},
+               
+                ]
+            });
+         
+     
+    },
+    error: function (obj, textstatus) {
+        alert(obj.msg);
+    }
+
+    
+  });
+  
+
+});
+
+
+  </script>
+  
+{% endblock %}
 
 {% endblock %}
