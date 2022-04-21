@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ChiffreAffaire;
 use App\Entity\Client;
 use App\Entity\Task;
 use App\Entity\Status;
@@ -149,7 +150,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/task/{id}", name="app_task_alloueTask")
      */
-    public function alloueTask(TaskRepository $repoTask,StatusRepository $repoStatut,ManagerRegistry $doctrine, Task $tasks, EntityManagerInterface $manager){
+    public function alloueTask(TaskRepository $repoTask,StatusRepository $repoStatut, Task $tasks, EntityManagerInterface $manager){
 
        
         $user = $this->getUser();

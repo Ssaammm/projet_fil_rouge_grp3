@@ -36,7 +36,8 @@ class UtilisateurController extends AbstractController
             $data[$key]['email'] = $value->getEmail();
             $data[$key]['id'] = $value->getId();
         }
-        dump($users);
+        $data = ['data' => $data];
+
         return new JsonResponse($data);
     }
 
