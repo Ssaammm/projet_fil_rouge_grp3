@@ -1,14 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}affichage des tâches
-{% endblock %}
 
 {% block body %}
 
-{% include "_affichage_taches_non_allouees.html.twig" %}
+                 <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-{% include "_affichage_taches_allouees.html.twig" %}
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Opérations en cours</h1>
+                    </div>
 
+            
+                    {% for user in tasks|filter(user => user.user != NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
+                    <div class="row">
+
+                        <div class="col-lg-4">
+
+
+                            <!-- Basic Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ (user.description) }}</p>
+					                <p class="card-text">Type: {{ (user.type) }}</p>
+					                <p class="card-text">Tarification: {% if user.type == "PETITE" %}1000 €{% endif %}
+                                        {% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
+                                </div>
+                                <div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
+					                {{ (user.user.prenom) }}</div>
+                            </div>
+
+                        </div>
+
+                        
+
+                    </div>
+                    {% endfor %}
+                </div>
 
 {% endblock %}
-

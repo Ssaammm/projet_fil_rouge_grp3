@@ -52,4 +52,15 @@ class UtilisateurController extends AbstractController
 
         return $this->redirectToRoute('app_utilisateur', [], Response::HTTP_SEE_OTHER);
     }
+
+
+    /**
+     * @Route("/test", name="apptest")
+     */
+    public function test(): Response
+    {
+        
+        return $this->render('test.html.twig');
+    }
+
 }
