@@ -43,8 +43,8 @@
 	
 
 		{# Condition pour que la navbar s'affiche uniquement lorsqu'on se connecte (if app.user) #}
-	{% if app.user %}
-			<body id="page-top">
+{% if app.user %}
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -376,10 +376,11 @@
                     </ul>
 
                 </nav>
+        {% endif %}
                 <!-- End of Topbar -->
 
             {% block body %}{% endblock %}
-
+{% if app.user %}
         </div>
         <!-- End of Content Wrapper -->
 		
@@ -410,6 +411,7 @@
             </div>
         </div>
     </div>
+{% endif %}
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -421,7 +423,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-	{% endif %}
+	
 
 
 
