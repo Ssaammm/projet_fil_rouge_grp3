@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UtilisateurController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block stylesheets %}
   {# {{ encore_entry_link_tags('app') }} #}
@@ -22,17 +22,36 @@
 
 <h1>UTILISATEURS</h1>
 
-  <table id="mtable" class="table table-succe table-striped">
-  </table>
+  {# <table id="mtable" class="table table-succe table-striped">
+  </table> #}
   
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
- 
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="mtable" width="100%" cellspacing="0">
+                </table>
+           </div>
+        </div>
+    </div>
+
+</div>
+
+
+
   <script type="text/javascript">
   $(document).ready(function() {
    
             $('#mtable').DataTable({
                 type: "GET",
-                ajax: 'http://localhost:8000/uti',
+                ajax: 'http://127.0.0.1:8000/uti',
                 oLanguage:{
                   sSearch: "Rechercher",
                   sLengthMenu: "Afficher _MENU_ lignes",
