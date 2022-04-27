@@ -2,7 +2,222 @@
 
 {% block title %}CHIFFRE D'AFFAIRE{% endblock %}
 
+
+{% block stylesheets %}
+    <style>
+        .card{           
+            border-radius: 6px;
+            margin-bottom : ;
+            text-align: center;
+            vertical-align: middle;
+            margin: ;
+            width: 200px;
+            height: 100%;
+        }
+        #aa{
+           
+            
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+
 {% block body %}
+<header style="width:100%; height: 20%">
+</header>
+{# <div class="container">
+    <div class="d-flex">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <p>nombre de petite tache: {{ chiffre.nbpetite }} </p>
+                </div>
+                <div class="card" width="400" height="400">
+                    <canvas id="myChart"></canvas>
+                </div>  
+            </div>
+            <div class="col">
+                <div class="card">
+                    <p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
+                </div>
+                <div class="card">    
+                    <p>total tache petite: {{ chiffre.totalpetite }} € </p>
+                </div>
+                        
+                <div class="card">            
+                    <p>total tache grande: {{ chiffre.totalgrande }} € </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
+                </div>
+                <div class="card">    
+                    <p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
+                </div>    
+                <div class="card">    
+                    <p>Total chiffre d'affaire {{ totalAffaire }}</p>
+                </div>
+            </div>   
+            </div>
+        </div>
+    </div>
+
+</div> #}
+
+<div class="container" id="aa">
+
+	<div class="row">
+
+		<div class="card col">
+			<p>nombre de petite tache:
+				{{ chiffre.nbpetite }}
+			</p>
+		</div>
+		<div class="card col">
+			<p>nombre de moyenne tache:
+				{{ chiffre.nbmoyen }}
+			</p>
+		</div>
+		<div class="card col">
+			<p>nombre de grande tache:
+				{{ chiffre.nbgrande }}
+			</p>
+		</div>
+	</div>
+
+
+	<div class="d-flex col">
+
+
+		<div>
+			<div class="card" width="400" height="400">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+
+
+		<div class="col">
+
+			<div class="row">
+				<div class="card">
+					<p>total tache petite:
+						{{ chiffre.totalpetite }}
+						€
+					</p>
+				</div>
+				<div class="card">
+					<p>total tache moyenne:
+						{{ chiffre.totalmoyen }}
+						€
+					</p>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="card">
+					<p>total tache grande:
+						{{ chiffre.totalgrande }}
+						€
+					</p>
+				</div>
+				<div class="card">
+					<p>Total chiffre d'affaire
+						{{ totalAffaire }}</p>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+{# </div> #}
+</div>
+
+
+
+<script>
+  const labels = [
+    'Petite ({{ chiffre.pourcpetite|number_format(2, '.', ',') }}%)',
+    'Moyenne ({{ chiffre.pourcmoyen|number_format(2, '.', ',') }}%)',
+    'Grosse ({{ chiffre.pourcgrande|number_format(2, '.', ',') }}%)'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      labels: 'My First dataset',
+      backgroundColor: ['rgb(255, 99, 132)',
+                        'rgb(241, 35, 156)',
+                        'rgb(125, 27, 178)'],
+      borderColor: 'rgb(255, 99, 132)',
+      data: [{{ chiffre.pourcpetite|number_format(2, '.', ',') }},{{ chiffre.pourcmoyen|number_format(2, '.', ',') }}, {{ chiffre.pourcgrande|number_format(2, '.', ',') }}],
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: '',
+                color: 'rgb(241, 35, 156)',
+                font:{
+                    size: 26
+                },
+                padding:{
+                    bottom: 50
+                }
+            },
+            legend:{
+                display: true,
+                labels:{
+                    font:{
+                        size: 13
+                    },
+                    padding: 20   
+                        
+                },
+                position:"bottom",   
+            },
+            responsive: true,   
+            
+        },
+        layout:{
+            padding: {
+                {# top: 70 #}
+            }
+        }
+    } 
+  };
+
+
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+    );
+
+
+</script>
+
+{% endblock %}
+
+
+
+{# 
+{% block body %}
+
 
 <h2>historique tache terminée</h2>
 <br>
@@ -25,4 +240,4 @@
 
 
 
-{% endblock %}
+{% endblock %} #}

@@ -35,7 +35,7 @@ class ChiffreAffaireController extends AbstractController
     }
 
         $totalAffaire = $chiffre->getTotalPetite()+$chiffre->getTotalMoyen()+$chiffre->getTotalGrande();
-
+        
         return $this->render('chiffre_affaire/index.html.twig', [
             'chiffre' => $chiffre,
             'totalAffaire' => $totalAffaire,

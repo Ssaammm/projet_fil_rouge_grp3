@@ -36,7 +36,8 @@ class UtilisateurController extends AbstractController
             $data[$key]['email'] = $value->getEmail();
             $data[$key]['id'] = $value->getId();
         }
-        dump($users);
+        $data = ['data' => $data];
+
         return new JsonResponse($data);
     }
 
@@ -51,4 +52,15 @@ class UtilisateurController extends AbstractController
 
         return $this->redirectToRoute('app_utilisateur', [], Response::HTTP_SEE_OTHER);
     }
+
+
+    /**
+     * @Route("/test", name="apptest")
+     */
+    public function test(): Response
+    {
+        
+        return $this->render('test.html.twig');
+    }
+
 }
