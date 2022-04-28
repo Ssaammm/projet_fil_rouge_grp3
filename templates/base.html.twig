@@ -76,9 +76,9 @@
             <!-- Heading -->
             <div class="sidebar-heading">
                 Interface
-            </div>
+            </div> #}
 
-  #}
+ 
 
 
             <!-- Divider -->
@@ -88,6 +88,16 @@
             <div class="sidebar-heading">
                 Addons
             </div>
+
+            <!-- Nav Item - nouvelle operation -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_task_new') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Nouvelle operation</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -109,8 +119,12 @@
                 </div>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
             {% if is_granted('ROLE_EXPERT') == true %}
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - nouvel utilisateur -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_register') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -118,12 +132,20 @@
             </li>
             {% endif %}
             
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
             <!-- Nav Item - chiffre d'affaire -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_chiffre_affaire') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Chiffre d'affaire</span></a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
 
             <!-- Nav Item - utilisateur -->
             <li class="nav-item">
@@ -400,7 +422,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script> 
- 
+  
 
 
 
