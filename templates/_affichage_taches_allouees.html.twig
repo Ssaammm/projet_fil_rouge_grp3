@@ -11,7 +11,7 @@
                     </div>
 
             
-                    {% for user in tasks|filter(user => user.user != NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
+                    {% for user in tasks|filter(user => user.status.id == 2)|sort((a , b) => a.client.nom <=> b.client.nom) %}
                     <div class="row">
 
                         <div class="col-lg-4">
