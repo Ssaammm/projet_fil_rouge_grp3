@@ -1,26 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CHIFFRE D'AFFAIRE{% endblock %}
+{% block title %}{% endblock %}
 
 
-{% block stylesheets %}
-    <style>
-        .card{           
-            border-radius: 6px;
-            margin-bottom : ;
-            text-align: center;
-            vertical-align: middle;
-            margin: ;
-            width: 200px;
-            height: 100%;
-        }
-        #aa{
-           
-            
-        }
-    </style>
-{% endblock %}
 
+{# 
+{% block body %}
+
+
+<h2>historique tache terminée</h2>
+<br>
+<p>nombre de petite tache: {{ chiffre.nbpetite }} </p>
+<p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
+<p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
+<br>
+<p>pourcentage tache petite: {{ chiffre.pourcpetite |number_format(2, '.', ',')}} % </p>
+<p>pourcentage tache moyenne: {{ chiffre.pourcmoyen |number_format(2, '.', ',') }} % </p>
+<p>pourcentage tache grande: {{ chiffre.pourcgrande |number_format(2, '.', ',') }} % </p>
+<br>
+<p>total tache petite: {{ chiffre.totalpetite }} € </p>
+<p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
+<p>total tache grande: {{ chiffre.totalgrande }} € </p>
+<br>
+
+<p>Total chiffre d'affaire {{ totalAffaire }}</p>
+
+#}
 
 
 {% block javascripts %}
@@ -29,118 +34,205 @@
 
 
 {% block body %}
-<header style="width:100%; height: 20%">
-</header>
-{# <div class="container">
-    <div class="d-flex">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <p>nombre de petite tache: {{ chiffre.nbpetite }} </p>
+
+<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Tasks Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-info shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Petite tâches terminées
+                                                            </div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbpetite }}</div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tasks Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-info shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Moyenne tâches terminées
+                                                            </div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{chiffre.nbmoyen}}</div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Tasks Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-info shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Grande tâches terminées
+                                                            </div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbgrande }}</div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <!-- Earnings (Annual) Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-success shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                                Total petite tâche</div>
+                                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalpetite }}</div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Earnings (Annual) Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-success shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                                Total moyenne tâche</div>
+                                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalmoyen }}</div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Earnings (Annual) Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-success shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                                total grande tâche</div>
+                                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalgrande }}</div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <!-- Earnings (Annual) Card Example -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="card border-left-danger shadow h-100 py-2">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col mr-2">
+                                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                                Chiffre d'Affaire</div>
+                                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ totalAffaire }}</div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                           
+                                    </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Donut Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    
+                                    <canvas id="myChart"></canvas>
+                                    
+                                    {# <hr>
+                                    Styling for the donut chart can be found in the
+                                    <code>/js/demo/chart-pie-demo.js</code> file. #}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="card" width="400" height="400">
-                    <canvas id="myChart"></canvas>
-                </div>  
-            </div>
-            <div class="col">
-                <div class="card">
-                    <p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
-                </div>
-                <div class="card">    
-                    <p>total tache petite: {{ chiffre.totalpetite }} € </p>
-                </div>
-                        
-                <div class="card">            
-                    <p>total tache grande: {{ chiffre.totalgrande }} € </p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
-                </div>
-                <div class="card">    
-                    <p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
-                </div>    
-                <div class="card">    
-                    <p>Total chiffre d'affaire {{ totalAffaire }}</p>
-                </div>
-            </div>   
-            </div>
-        </div>
-    </div>
-
-</div> #}
-
-<div class="container" id="aa">
-
-	<div class="row">
-
-		<div class="card col">
-			<p>nombre de petite tache:
-				{{ chiffre.nbpetite }}
-			</p>
-		</div>
-		<div class="card col">
-			<p>nombre de moyenne tache:
-				{{ chiffre.nbmoyen }}
-			</p>
-		</div>
-		<div class="card col">
-			<p>nombre de grande tache:
-				{{ chiffre.nbgrande }}
-			</p>
-		</div>
-	</div>
+                <!-- /.container-fluid -->
 
 
-	<div class="d-flex col">
 
+    {# <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-		<div>
-			<div class="card" width="400" height="400">
-				<canvas id="myChart"></canvas>
-			</div>
-		</div>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script> #}
 
-
-		<div class="col">
-
-			<div class="row">
-				<div class="card">
-					<p>total tache petite:
-						{{ chiffre.totalpetite }}
-						€
-					</p>
-				</div>
-				<div class="card">
-					<p>total tache moyenne:
-						{{ chiffre.totalmoyen }}
-						€
-					</p>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="card">
-					<p>total tache grande:
-						{{ chiffre.totalgrande }}
-						€
-					</p>
-				</div>
-				<div class="card">
-					<p>Total chiffre d'affaire
-						{{ totalAffaire }}</p>
-				</div>
-			</div>
-
-		</div>
-
-
-	</div>
-
-{# </div> #}
-</div>
 
 
 
@@ -168,17 +260,7 @@
     data: data,
     options: {
         plugins: {
-            title: {
-                display: true,
-                text: '',
-                color: 'rgb(241, 35, 156)',
-                font:{
-                    size: 26
-                },
-                padding:{
-                    bottom: 50
-                }
-            },
+   
             legend:{
                 display: true,
                 labels:{
@@ -211,33 +293,11 @@ const myChart = new Chart(
 
 </script>
 
+
+
+
+
+
+
+
 {% endblock %}
-
-
-
-{# 
-{% block body %}
-
-
-<h2>historique tache terminée</h2>
-<br>
-<p>nombre de petite tache: {{ chiffre.nbpetite }} </p>
-<p>nombre de moyenne tache: {{ chiffre.nbmoyen }} </p>
-<p>nombre de grande tache: {{ chiffre.nbgrande }} </p>
-<br>
-<p>pourcentage tache petite: {{ chiffre.pourcpetite |number_format(2, '.', ',')}} % </p>
-<p>pourcentage tache moyenne: {{ chiffre.pourcmoyen |number_format(2, '.', ',') }} % </p>
-<p>pourcentage tache grande: {{ chiffre.pourcgrande |number_format(2, '.', ',') }} % </p>
-<br>
-<p>total tache petite: {{ chiffre.totalpetite }} € </p>
-<p>total tache moyenne: {{ chiffre.totalmoyen }} € </p>
-<p>total tache grande: {{ chiffre.totalgrande }} € </p>
-<br>
-
-<p>Total chiffre d'affaire {{ totalAffaire }}</p>
-
-
-
-
-
-{% endblock %} #}
