@@ -18,7 +18,7 @@ class RegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
-     * @Route("/register/{id}/edit", name="app_register_edit")
+     * @Route("/register/edit/{id}", name="app_register_edit")
      */
     public function register(User $user=null, Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
@@ -41,6 +41,8 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_utilisateur');
             // do anything else you need here, like send an email
 
             // return $guardHandler->authenticateUserAndHandleSuccess(

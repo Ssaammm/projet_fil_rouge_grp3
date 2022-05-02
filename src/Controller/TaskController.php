@@ -208,9 +208,9 @@ class TaskController extends AbstractController
             
         }
 
-        if ($role[0] == "ROLE_APPRENTIT") {
+        if ($role[0] == "ROLE_APPRENTI") {
             $max = 1;
-            if (count($nombre) > $max) {
+            if (count($nombre) < $max) {
                 $task = $tasks->setUser($this->getUser())
                       ->setStatus($statut);
                       $manager->persist($task);

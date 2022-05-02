@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}
+
+{% block title %}{% endblock %}
+
+{% block javascripts %}
+
+<!-- script template -->
+<script src="vendor/jquery/jquery.min.js"></script> 
+
 {% endblock %}
 
 {% block body %}
 
-
-<h1>{% if btnmodif %} Inscription {% else %} Modifier l'utilisateur {% endif %}</h1>
+{# <h1>{% if btnmodif %} Inscription {% else %} Modifier l'utilisateur {% endif %}</h1>
 
 
 <div class="card shadow mb-4">
@@ -35,9 +41,62 @@
         {% endif %} 
 
     </div>
+</div> #}
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block"><img src="../img/register.jpg" alt="register"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                                   <h1>{% if btnmodif %} Inscription {% else %} Modifier l'utilisateur {% endif %}</h1>
+
+
+<div class="card shadow mb-4">
+    
+    <div class="card-body">
+        {{ form_start(registrationForm) }}
+        
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.nom) }}
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.roles) }}
+        {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'})
+        }}
+        {{ form_row(registrationForm.agreeTerms) }}
+        <button type="submit" class="btn btn-primary mt-3">{% if btnmodif %}S'inscrire {% else %} Appliquer la modification {% endif %}</button>
+
+        {{ form_end(registrationForm) }}
+
+        {% if not btnmodif %}
+        <form method="post" action="{{ path('app_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer cette utilisateur (pas de retour en arrière possible)?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+            <button class="btn btn-danger mt-3">Supprimer l'utilisateur</button>
+        </form>
+        {% endif %} 
+
+    </div>
 </div>
-    
-    
+</div>
+</form> 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </div>
+
+
 
 
 {% endblock %}
