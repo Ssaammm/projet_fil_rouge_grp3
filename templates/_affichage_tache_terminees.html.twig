@@ -1,11 +1,51 @@
+
+
 {% block body %}
 
-
-	<div class="row">
-		<h1>Opérations terminées</h1>
+	<h1 class= "ml-5">Opérations terminées</h1>
+	<div class="d-flex">
+	
 		{% for user in tasks|filter( user => user.status.id == 3)|sort((a , b) => a.client.nom <=> b.client.nom)  %}
 
-			<div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
+			<div class="card shadow mb-4 m-5 w-25">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">
+						Client :
+						{{ (user.client.nom) }}
+						{{ (user.client.prenom) }}</h6>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Description:
+					</h5>
+					<p class="card-text">{{ (user.description) }}</p>
+					<p class="card-text">type:
+						{{ (user.type) }}</p>
+					<p class="card-text">Tarification:
+						{% if user.type == "PETITE" %}1000 €
+						{% endif %}
+						{% if user.type == "MOYENNE" %}2500 €
+						{% endif %}
+						{% if user.type == "GROSSE" %}10000 €
+						{% endif %}
+					</p>
+				</div>
+				<div class="card-footer text-light bg-dark">Fait par :
+					{{ (user.user.nom) }}
+					{{ (user.user.prenom) }}
+				</div>
+
+			</div>
+
+		{% endfor %}
+	</div>
+
+	<!-- Basic Card Example -->
+
+
+{% endblock %}
+
+
+{# <div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
 				<div class="card-header"> Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</div>
 				<div class="card-body">
 					<h5 class="card-title">Description:
@@ -17,10 +57,4 @@
 				<div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
 					{{ (user.user.prenom) }}
 				</div>
-			</div>
-		{% endfor %}
-	</div>
-
-
-{% endblock %}
-
+			</div> #}

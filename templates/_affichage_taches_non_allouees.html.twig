@@ -36,8 +36,8 @@
                     </div>
 
             
-				{% for user in tasks|filter(user => user.user == NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
-                    <div class="row">
+					{% for user in tasks|filter(user => user.user == NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
+                    <div class="d-flex">
 
                         <div class="col-lg-4">
 
