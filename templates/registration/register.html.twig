@@ -80,7 +80,11 @@
         {% if not btnmodif %}
         <form method="post" action="{{ path('app_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer cette utilisateur (pas de retour en arrière possible)?');">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
-            <button class="btn btn-danger mt-3">Supprimer l'utilisateur</button>
+            <button class="btn btn-danger mt-3">Supprimer l'utilisateur
+                <span class="icon text-white-50">
+                    <i class="fas fa-trash"></i>
+                </span>
+            </button>
         </form>
         {% endif %} 
 
