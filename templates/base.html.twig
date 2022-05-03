@@ -109,7 +109,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item active" href="{{ path('app_task_affichage') }}">Affichage des operations</a>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage') }}">Opérations non assignées</a>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage_en_cours') }}">Opérations en cours</a>
                         <a class="collapse-item active" href="{{ path('app_task_affichage_perso') }}">Mes operations</a>
                         {% if is_granted('ROLE_EXPERT') == true %}
                         <a class="collapse-item active" href="{{ path('app_task_affichage_terminees') }}">Operations terminées</a>
