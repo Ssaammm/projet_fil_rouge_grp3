@@ -1,11 +1,58 @@
-{% block body %}
 
 
+{% block body %}	
+
+	<div class="d-sm-flex align-items-center justify-content-between mb-4">
+		<h1 class="h3 mb-0 text-gray-800 ml-5">Opérations terminées</h1>
+	</div>
+
+<div class="container-fluid">
 	<div class="row">
-		<h1>Opérations terminées</h1>
+	
 		{% for user in tasks|filter( user => user.status.id == 3)|sort((a , b) => a.client.nom <=> b.client.nom)  %}
 
-			<div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
+		<div class="col-xl-4 col-lg-4 col-md-6 d-flex align-items-stretch">
+
+			<!-- Basic Card Example -->
+			<div class="card shadow m-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">
+						Client :
+						{{ (user.client.nom) }}
+						{{ (user.client.prenom) }}</h6>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">Description:
+					</h5>
+					<p class="card-text">{{ (user.description) }}</p>
+					<p class="card-text">type:
+						{{ (user.type) }}</p>
+					<p class="card-text">Tarification:
+						{% if user.type == "PETITE" %}1000 €
+						{% endif %}
+						{% if user.type == "MOYENNE" %}2500 €
+						{% endif %}
+						{% if user.type == "GROSSE" %}10000 €
+						{% endif %}
+					</p>
+				</div>
+				<div class="card-footer text-light bg-dark">Fait par :
+					{{ (user.user.nom) }}
+					{{ (user.user.prenom) }}
+				</div>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+	<!-- Basic Card Example -->
+
+
+{% endblock %}
+
+
+{# <div class="card text-white bg-secondary m-5" style="max-width: 18rem;">
 				<div class="card-header"> Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</div>
 				<div class="card-body">
 					<h5 class="card-title">Description:
@@ -17,10 +64,4 @@
 				<div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
 					{{ (user.user.prenom) }}
 				</div>
-			</div>
-		{% endfor %}
-	</div>
-
-
-{% endblock %}
-
+			</div> #}

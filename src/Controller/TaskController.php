@@ -105,6 +105,19 @@ class TaskController extends AbstractController
 
     }
 
+    /**
+     * @Route("/affichage/en_cours", name="app_task_affichage_en_cours", methods={"GET"})
+     */
+    public function affiche_tache_en_cours(): Response {
+
+        $repo = $this->getDoctrine()->getRepository(Task::class);
+        $task = $repo->findAll();
+
+        return $this->render('affichage_taches_en_cours.html.twig', [
+            'tasks' => $task
+        ]);
+
+    }
 
 
     /**

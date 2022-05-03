@@ -14,7 +14,13 @@ class SecurityController extends AbstractController
      */
     public function redirection(){
 
-        return $this->redirectToRoute('app_login');
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_task_affichage');
+        }
+        else {
+            return $this->redirectToRoute('app_login');
+        }
+        
     }
 
     /**

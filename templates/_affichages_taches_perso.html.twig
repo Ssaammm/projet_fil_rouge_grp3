@@ -31,25 +31,27 @@
 
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+
 
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-		<h1 class="h3 mb-0 text-gray-800">Mes opérations</h1>
+		<h1 class="h3 mb-0 text-gray-800 ml-5">Mes opérations</h1>
 	</div>
 
-
-	{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
+<div class="container-fluid">
 	<div class="row">
+	{% for user in tasks|filter( user => user.user == app.user and user.status.id == 2)  %}
 
-		<div class="col-lg-4">
+
+	
+
+		<div class="col-xl-4 col-lg-4 col-md-6 d-flex align-items-stretch">
 
 
 			<!-- Basic Card Example -->
-			<div class="card shadow mb-4">
+			<div class="card shadow m-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</h6>
-					<h6 class="m-0 font-weight-bold text-primary">Utilisateur : {{ (user.user.nom) }} {{ (user.user.prenom) }}</h6>
 				</div>
 				<div class="card-body">
 					<p class="card-text">{{ (user.description) }}</p>
@@ -58,7 +60,7 @@
 						{% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
 				</div>
 				<div class="footer mb-3">
-					<a href="{{ path('app_task_termineTask', { 'id': user.id }) }}" type="button" class="btn btn-primary">Terminé</a>
+					<a href="{{ path('app_task_termineTask', { 'id': user.id }) }}" type="button" class="btn btn-primary ml-3">Terminé</a>
 				</div>
 
 			</div>
@@ -67,8 +69,9 @@
 
 		
 
-	</div>
+	
 	{% endfor %}
+	</div>
 </div>
 
 

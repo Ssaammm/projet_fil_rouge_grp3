@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block title %}{% endblock %}
 
-{% include "_affichage_tache_terminees.html.twig" %}
-
-{% endblock %}
 {% block javascripts %}
 
 <!-- script template -->
 <script src="vendor/jquery/jquery.min.js"></script> 
+
+{% endblock %}
+
+{% block body %}
+
+
+{% include "_affichage_taches_allouees.html.twig" %}
+
 
 {% endblock %}
