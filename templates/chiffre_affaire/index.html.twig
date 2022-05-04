@@ -40,18 +40,20 @@
 {% block body %}
 
 <!-- Begin Page Content -->
-        <div class="container-fluid">
+        
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+		        <h1 class="h3 mb-0 text-gray-800 ml-5 m-3">Chiffre d'Affaire</h1>
+	        </div>
+        <div class="container-fluid">
             <!-- Content Row -->
             <div class="row">
 
-                <div class="col-xl-8 col-lg-7">
+                <div class="col-xl-7 col-lg-7 col-3 d-flex align-items-stretch">
 
                     <!-- Area Chart -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow ml-5">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
                         </div>
@@ -212,7 +214,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
                         </div>
                         <!-- Card Body -->
-                        <div class="card-body">
+                        <div class="card-body m-5">
                             
                             <canvas id="myChart"></canvas>
                             
