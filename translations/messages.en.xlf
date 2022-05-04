@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="JlgpKrA" resname="Tâche attribué! Nombre de tâches : ">
+        <source>Tâche attribué! Nombre de tâches : </source>
+        <target>the task no distrib! number task : </target>
+      </trans-unit>
+      <trans-unit id="nfvQ2uF" resname="Impossible, vous avez ">
+        <source>Impossible, vous avez </source>
+        <target>impossible, you are </target>
+      </trans-unit>
+      <trans-unit id=".QGVx0V" resname="Nouvelle operation">
+        <source>Nouvelle operation</source>
+        <target>new operation</target>
+      </trans-unit>
+      <trans-unit id="jH4Hzp2" resname="Tâches">
+        <source>Tâches</source>
+        <target>Task</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

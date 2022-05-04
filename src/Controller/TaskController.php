@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -151,7 +152,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/task/{id}", name="app_task_alloueTask")
      */
-    public function alloueTask(TaskRepository $repoTask,StatusRepository $repoStatut, Task $tasks, EntityManagerInterface $manager){
+    public function alloueTask(TaskRepository $repoTask,StatusRepository $repoStatut, Task $tasks, EntityManagerInterface $manager, TranslatorInterface $translator){
 
        
         $user = $this->getUser();
@@ -164,9 +165,11 @@ class TaskController extends AbstractController
             if (count($nombre) < $max) {
                 $task = $tasks->setUser($this->getUser())
                       ->setStatus($statut);
-                      $manager->persist($task);
-                    $manager->flush($task);
-                    $this->addFlash('success','Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $manager->persist($task);
+                $manager->flush($task);
+
+                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $this->addFlash('success', $message);
                 return $this->redirectToRoute('app_task_affichage');
                 
 
@@ -174,8 +177,8 @@ class TaskController extends AbstractController
             }
             
             else {
-
-                $this->addFlash("failed", "Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $this->addFlash("failed", $message);
                 return $this->redirectToRoute('app_task_affichage');
             }
 
@@ -188,9 +191,11 @@ class TaskController extends AbstractController
             if (count($nombre) < $max) {
                 $task = $tasks->setUser($this->getUser())
                       ->setStatus($statut);
-                      $manager->persist($task);
-        $manager->flush($task);
-        $this->addFlash('success','Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $manager->persist($task);
+                $manager->flush($task);
+                
+                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $this->addFlash('success', $message);
                 
                 return $this->redirectToRoute('app_task_affichage');
 
@@ -199,8 +204,8 @@ class TaskController extends AbstractController
             
             
             else {
-
-                $this->addFlash("failed", "Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $this->addFlash("failed",$message);
                 return $this->redirectToRoute('app_task_affichage');
             }
 
@@ -213,9 +218,11 @@ class TaskController extends AbstractController
             if (count($nombre) < $max) {
                 $task = $tasks->setUser($this->getUser())
                       ->setStatus($statut);
-                      $manager->persist($task);
-        $manager->flush($task);
-        $this->addFlash('success','Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $manager->persist($task);
+                $manager->flush($task);
+
+                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
+                $this->addFlash('success',$message);
                 return $this->redirectToRoute('app_task_affichage');
 
         
@@ -223,8 +230,8 @@ class TaskController extends AbstractController
             
             else {
 
-                
-                $this->addFlash("failed", "Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
+                $this->addFlash("failed", $message);
                 return $this->redirectToRoute('app_task_affichage');
             }
 
