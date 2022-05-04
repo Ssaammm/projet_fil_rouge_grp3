@@ -7,7 +7,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800 ml-5">Opérations en cours</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ml-5">{% trans %}Opérations en cours{% endtrans %} </h1>
                     </div>
 
                 <div class="container-fluid">
@@ -21,15 +21,15 @@
                             <!-- Basic Card Example -->
                             <div class="card shadow m-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Client : {{ (user.client.nom) }} {{ (user.client.prenom) }}</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">{% trans %}Client :{% endtrans %} {{ (user.client.nom) }} {{ (user.client.prenom) }}</h6>
                                 </div>
                                 <div class="card-body">
                                     <p class="card-text">{{ (user.description) }}</p>
-					                <p class="card-text">Type: {{ (user.type) }}</p>
-					                <p class="card-text">Tarification: {% if user.type == "PETITE" %}1000 €{% endif %}
+					                <p class="card-text">{% trans %}Type:{% endtrans %}  {{ (user.type) }}</p>
+					                <p class="card-text">{% trans %}Tarification:{% endtrans %}  {% if user.type == "PETITE" %}1000 €{% endif %}
                                         {% if user.type == "MOYENNE" %}2500 €{% endif %}{% if user.type == "GROSSE" %}10000 €{% endif %}</p>
                                 </div>
-                                <div class="card-footer bg-dark">Fait par : {{ (user.user.nom) }}
+                                <div class="card-footer bg-dark">{% trans %}Fait par :{% endtrans %}  {{ (user.user.nom) }}
 					                {{ (user.user.prenom) }}</div>
                             </div>
 

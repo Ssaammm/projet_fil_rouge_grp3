@@ -2,7 +2,7 @@
     {{ form_widget(form2) }}
 
 <select name="monselect" id="monselect">test</select>
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary">{% trans %}Enregistrer{% endtrans %}</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans %}Annuler{% endtrans %} </button>
     
 {{ form_end(form2) }}
