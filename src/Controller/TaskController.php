@@ -177,12 +177,13 @@ class TaskController extends AbstractController
             $max = 3;
             if (count($nombre) < $max) {
                 $task = $tasks->setUser($this->getUser())
-                      ->setStatus($statut);
+                              ->setStatus($statut);
                 $manager->persist($task);
                 $manager->flush($task);
 
-                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
-                $this->addFlash('success', $message);
+                $message1 = $translator->trans('Tâche attribué! Nombre de tâches : ');
+                $message2 = $translator->trans(" sur ");
+                $this->addFlash('success', $message1.(count($nombre)+1).$message2.$max );
                 return $this->redirectToRoute('app_task_affichage');
                 
 
@@ -190,8 +191,9 @@ class TaskController extends AbstractController
             }
             
             else {
-                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
-                $this->addFlash("failed", $message);
+                $message1 = $translator->trans("Impossible, vous avez ");
+                $message2 = $translator->trans(" tâches en cours, votre limite est de ");
+                $this->addFlash("failed", $message1.count($nombre).$message2.$max);
                 return $this->redirectToRoute('app_task_affichage');
             }
 
@@ -207,8 +209,9 @@ class TaskController extends AbstractController
                 $manager->persist($task);
                 $manager->flush($task);
                 
-                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
-                $this->addFlash('success', $message);
+                $message1 = $translator->trans('Tâche attribué! Nombre de tâches : ');
+                $message2 = $translator->trans(" sur ");
+                $this->addFlash('success', $message1.(count($nombre)+1).$message2.$max);
                 
                 return $this->redirectToRoute('app_task_affichage');
 
@@ -217,8 +220,9 @@ class TaskController extends AbstractController
             
             
             else {
-                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
-                $this->addFlash("failed",$message);
+                $message1 = $translator->trans("Impossible, vous avez ");
+                $message2 = $translator->trans(" tâches en cours, votre limite est de ");
+                $this->addFlash("failed", $message1.count($nombre).$message2.$max);
                 return $this->redirectToRoute('app_task_affichage');
             }
 
@@ -234,8 +238,9 @@ class TaskController extends AbstractController
                 $manager->persist($task);
                 $manager->flush($task);
 
-                $message = $translator->trans('Tâche attribué! Nombre de tâches : '.(count($nombre)+1)." sur ".$max);
-                $this->addFlash('success',$message);
+                $message1 = $translator->trans('Tâche attribué! Nombre de tâches : ');
+                $message2 = $translator->trans(" sur ");
+                $this->addFlash('success',$message1.(count($nombre)+1).$message2.$max);
                 return $this->redirectToRoute('app_task_affichage');
 
         
@@ -243,8 +248,9 @@ class TaskController extends AbstractController
             
             else {
 
-                $message = $translator->trans("Impossible, vous avez ".count($nombre)." tâches en cours, votre limite est de ".$max);
-                $this->addFlash("failed", $message);
+                $message1 = $translator->trans("Impossible, vous avez ");
+                $message2 = $translator->trans(" tâches en cours, votre limite est de ");
+                $this->addFlash("failed", $message1.count($nombre).$message2.$max);
                 return $this->redirectToRoute('app_task_affichage');
             }
 

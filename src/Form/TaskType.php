@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Client;
 use App\Entity\Task;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -21,7 +22,7 @@ class TaskType extends AbstractType
         $builder
 
             ->add('client', EntityType::class, ['class'=>Client::class,
-            'choice_label'=>'prenom'])
+            'choice_label'=>'prenom'], array('label' => 'form.client', 'required' => false))
             ->add('type', ChoiceType::class, [
                 'choices'  => [
                     'Petite' => "PETITE",

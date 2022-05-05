@@ -185,9 +185,7 @@
 
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-    
+                    <ul class="navbar-nav ml-auto">   
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -196,11 +194,22 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ app.user.nom }} {{ app.user.prenom }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
-                            </a>
-                            
-            
+                            </a>                        
                         </li>
+
                         <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <div class="container"> 
+                                {% for locale in locales %}
+                                    {% if locale != app.request.locale %}
+                                        <a class="nav-link" href="{{ path('app_change_locale', {'locale': locale}) }}">{{ locale }}</a>
+                                    {% endif %}    
+                                {% endfor %}
+                               
+                                                    
+                        </div>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        
                         <div class="container">
                         <a class="btn btn-danger" data-toggle="modal" data-target="#logoutModal">{% trans %}Déconnexion{% endtrans %} </a>
                         </div>

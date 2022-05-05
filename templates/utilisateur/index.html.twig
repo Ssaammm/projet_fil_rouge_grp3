@@ -56,22 +56,22 @@
                 processing: '<div class="d-flex justify-content-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden"></span></div></div>'
                 },
                 type: "GET",
-                ajax: 'https://127.0.0.1:8000/uti',
+                ajax: 'http://127.0.0.1:8000/uti',
                 oLanguage:{
-                  sSearch: "Rechercher",
-                  sLengthMenu: "Afficher _MENU_ lignes",
-                  sInfo: "Lignes _START_ à _END_ sur _TOTAL_",
+                  sSearch: {% trans %}"Rechercher"{% endtrans %},
+                  sLengthMenu: {% trans %}"Afficher _MENU_ lignes"{% endtrans %},
+                  sInfo: {% trans %}"Lignes _START_ à _END_ sur _TOTAL_"{% endtrans %},
                   oPaginate: {
-                    "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
+                    "sFirst": "Premier", "sLast": "Dernier", "sNext": {% trans %}"Suivant"{% endtrans %}, "sPrevious": {% trans %}"Précédent"{% endtrans %}
                      },
-                  sInfoEmpty: "Aucune ligne affichée",
-                  sZeroRecords: "Aucun résultat trouvé",
-                  sInfoFiltered: "(Filtrer un maximum de_MAX_)",
+                  sInfoEmpty: {% trans %}"Aucune ligne affichée"{% endtrans %},
+                  sZeroRecords: {% trans %}"Aucun résultat trouvé"{% endtrans %},
+                  sInfoFiltered: {% trans %}"(Filtrer un maximum de_MAX_)"{% endtrans %},
                 },
                 columns: [
                     { data: 'id', title: "id" },
-                    { data: 'nom', title:"nom" },
-                    { data: 'prenom', title:"prenom"},
+                    { data: 'nom', title:{% trans %}"nom"{% endtrans %}},
+                    { data: 'prenom', title:{% trans %}"prenom"{% endtrans %}},
                     { data: 'email', title:"email"},
                     {
                       data: "id",

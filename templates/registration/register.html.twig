@@ -69,9 +69,8 @@
         {{ form_row(registrationForm.nom) }}
         {{ form_row(registrationForm.prenom) }}
         {{ form_row(registrationForm.roles) }}
-        {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'})
-        }}
+        
+        {{ form_row(registrationForm.plainPassword) }}
         {{ form_row(registrationForm.agreeTerms) }}
         <button type="submit" class="btn btn-primary mt-3">{% if btnmodif %}{% trans %}Inscription{% endtrans %}  {% else %} {% trans %}Appliquer la modification{% endtrans %}  {% endif %}</button>
 

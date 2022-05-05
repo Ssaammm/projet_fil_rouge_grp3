@@ -237,9 +237,9 @@
 
 <script>
   const labels = [
-    'Petite ({{ chiffre.pourcpetite|number_format(2, '.', ',') }}%)',
-    'Moyenne ({{ chiffre.pourcmoyen|number_format(2, '.', ',') }}%)',
-    'Grosse ({{ chiffre.pourcgrande|number_format(2, '.', ',') }}%)'
+    {% trans %} 'Petite' {% endtrans %} + '({{ chiffre.pourcpetite|number_format(2, '.', ',') }}%)' ,
+    {% trans %} 'Moyenne' {% endtrans %} + '({{ chiffre.pourcmoyen|number_format(2, '.', ',') }}%)',
+    {% trans %} 'Grosse' {% endtrans %} + '({{ chiffre.pourcgrande|number_format(2, '.', ',') }}%)'
   ];
 
   const data = {
