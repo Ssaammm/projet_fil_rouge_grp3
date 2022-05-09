@@ -49,7 +49,22 @@ class TaskRepository extends ServiceEntityRepository
     //  * @return Task[] Returns an array of Task objects
     //  */
     
+    // retourne un tableau des tâches en cours de l'utilisateur
     public function CountTask($value,$value2)
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.user = :val')
+            ->andWhere('t.status = :va2')
+            ->setParameter('val', $value)
+            ->setParameter('va2', $value2)
+            ->getQuery()
+            ->getResult();
+
+            
+        ;
+    }
+    // retourne un tableau des tâches terminées de l'utilisateur
+    public function CountTaskFinished($value,$value2)
     {
         return $this->createQueryBuilder('t')
             ->where('t.user = :val')
