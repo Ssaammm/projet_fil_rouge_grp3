@@ -86,14 +86,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                {% trans %} Gestion {% endtrans %}
             </div>
 
             <!-- Nav Item - nouvelle operation -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_task_new') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Nouvelle operation</span></a>
+                    <span>{% trans %} Nouvelle operation {% endtrans %}</span></a>
             </li>
 
             <!-- Divider -->
@@ -104,16 +104,16 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Tâches</span>
+                    <span>{% trans %} Opérations {% endtrans %}</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item active" href="{{ path('app_task_affichage') }}">Opérations non assignées</a>
-                        <a class="collapse-item active" href="{{ path('app_task_affichage_en_cours') }}">Opérations en cours</a>
-                        <a class="collapse-item active" href="{{ path('app_task_affichage_perso') }}">Mes operations</a>
+                        <h6 class="collapse-header">{% trans %} Opérations {% endtrans %}</h6>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage') }}">{% trans %}Opérations non assignées{% endtrans %}</a>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage_en_cours') }}">{% trans %}Opérations en cours{% endtrans %}</a>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage_perso') }}">{% trans %}Mes operations{% endtrans %}</a>
                         {% if is_granted('ROLE_EXPERT') == true %}
-                        <a class="collapse-item active" href="{{ path('app_task_affichage_terminees') }}">Operations terminées</a>
+                        <a class="collapse-item active" href="{{ path('app_task_affichage_terminees') }}">{% trans %}Operations terminées{% endtrans %}</a>
                         {% endif %}
                         
                     </div>
@@ -129,7 +129,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_register') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Nouvel utilisateur</span></a>
+                    <span>{% trans %} Nouvel utilisateur {% endtrans %}</span></a>
             </li>
             
             
@@ -141,7 +141,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_chiffre_affaire') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Chiffre d'affaire</span></a>
+                    <span>{% trans %} Chiffre d'affaire {% endtrans %}</span></a>
             </li>
 
             <!-- Divider -->
@@ -152,7 +152,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_utilisateur') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Table utilisateurs</span></a>
+                    <span>{% trans %} Liste utilisateurs {% endtrans %}</span></a>
             </li>
 
             {% endif %}
@@ -185,9 +185,7 @@
 
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-    
+                    <ul class="navbar-nav ml-auto">   
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -196,13 +194,24 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ app.user.nom }} {{ app.user.prenom }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
-                            </a>
-                            
-            
+                            </a>                        
                         </li>
+
                         <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <div class="container"> 
+                        {% for locale in locales %}
+                            {% if locale != app.request.locale %}
+                                <a class="nav-link" href="{{path('app_change_locale',{'locale': locale })}}">{{locale}}</a>
+                            {% endif %}
+                        {% endfor %}
+                               
+                                                   
+                        </div>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        
                         <div class="container">
-                        <a class="btn btn-danger" data-toggle="modal" data-target="#logoutModal">Deconnexion</a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#logoutModal">{% trans %}Déconnexion{% endtrans %} </a>
                         </div>
                     </ul>
 
@@ -230,15 +239,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Au revoir !</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{% trans %}Au revoir !{% endtrans %} </h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">êtes-vous sûr de vouloir vous déconnecter ?</div>
+                <div class="modal-body">{% trans %}êtes-vous sûr de vouloir vous déconnecter ?{% endtrans %} </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Retour</button>
-                    <a class="btn btn-primary" href="{{ path('app_logout') }}">Deconnexion</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">{% trans %}Retour{% endtrans %} </button>
+                    <a class="btn btn-primary" href="{{ path('app_logout') }}">{% trans %}Déconnexion{% endtrans %}</a>
                 </div>
             </div>
         </div>

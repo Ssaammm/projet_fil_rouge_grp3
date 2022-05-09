@@ -1,7 +1,18 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+
+     <label for="client">{% trans %}Client{% endtrans %} </label>
+    {{ form_row(form.client, {'label': ' '}) }}
+
+    <label for="type">{% trans %}Type{% endtrans %} </label>
+    {{ form_row(form.type, {'label': ' '}) }}
 
     
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.description, {'label': 'Description'}) }}
+
+
     
+    <button class="btn btn-primary">{% trans %}Enregistrer{% endtrans %} </button>
+    
+
 {{ form_end(form) }}

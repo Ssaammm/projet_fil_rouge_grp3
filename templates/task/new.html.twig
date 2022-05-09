@@ -18,25 +18,25 @@
 
 {% block body %}
 
-  
-<div class="position-absolute ml-5">
-    <div class="card o-hidden border-0 shadow-lg my-5" style="width:50rem;">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="p-5">
-                        <div class="text-center">
-                            <h1 class="h3 text-gray-900 mb-4">Créer une nouvelle tâche</h1>
-                        </div>
-                                  {{ include('task/_form.html.twig') }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+  <div class="d-flex justify-content-center">
+      <div class="card o-hidden border-0 shadow-lg my-5" style="width:50rem;">
+          <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="p-5">
+                          <div class="text-center">
+                              <h1 class="h3 text-gray-900 mb-4">{% trans %}Créer une nouvelle tâche{% endtrans %} </h1>
+                          </div>
+                                    {{ include('task/_form.html.twig') }}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
-
 
 
   
@@ -44,7 +44,7 @@
 <!-- Button trigger modal --> 
 
 <button type="button" id='bouton_modal' class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Creer un nouveau client
+  {% trans %}Creer un nouveau client{% endtrans %} 
 </button>
 
 <!-- Modal -->
@@ -52,7 +52,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Creer un nouveau client</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{% trans %}Creer un nouveau client{% endtrans %} </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
