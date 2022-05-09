@@ -45,8 +45,6 @@ class TaskController extends AbstractController
         $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
         $status = $statusRepository->find(1);
-
-        $statut = $statusRepository->find(1);
         $client = new Client();
         $form2 = $this->createForm(ClientType::class, $client);
         $form2->handleRequest($request);
@@ -277,21 +275,18 @@ class TaskController extends AbstractController
         if ($tasks->getType()=="PETITE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbPetite($chiffre->getNbPetite()+1);
-            $task->setUser(null);
             $manager->persist($chiffre);
 
         }
         elseif ($tasks->getType()=="MOYENNE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbMoyen($chiffre->getNbMoyen()+1);
-            $task->setUser(null);
             $manager->persist($chiffre);
 
         }
         elseif ($tasks->getType()=="GROSSE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbGrande($chiffre->getNbGrande()+1);
-            $task->setUser(null);
             $manager->persist($chiffre);
 
         }
