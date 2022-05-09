@@ -53,7 +53,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion h-100 sticky-top" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ path('app_home') }}">
                 <div class="sidebar-brand-icon">
                     <img src="../img/maison_propar.png" alt="">
                 </div>
@@ -203,12 +203,12 @@
                         {% for locale in locales %}
                             {% if locale != app.request.locale %}
                                 <a class="nav-link" href="{{path('app_change_locale',{'locale': locale })}}">
-                                    {{locale}}
+                                    <img src="{{('img/'~locale~'.png')}}" alt="{{locale}}">
                                 </a>
                             {% endif %}
                         {% endfor %}
-                               
-                                                   
+        
+                            
                         </div>
                         <div class="topbar-divider d-none d-sm-block"></div>
                         
