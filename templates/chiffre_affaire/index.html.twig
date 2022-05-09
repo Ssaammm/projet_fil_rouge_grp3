@@ -3,12 +3,11 @@
 {% block title %}{% endblock %}
 
 
-
 {% block javascripts %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- script template -->
-<script src="vendor/jquery/jquery.min.js"></script> 
+	<!-- script template -->
+	<script src="vendor/jquery/jquery.min.js"></script>
 
 {% endblock %}
 
@@ -16,198 +15,214 @@
 {% block body %}
 
 <!-- Begin Page Content -->
-    <div class="container-fluid">
+<div
+	class="container-fluid">
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 mb-3">{% trans %}Chiffre d'Affaire{% endtrans %} </h1>
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800 mb-3">{% trans %}Chiffre d'Affaire{% endtrans %}
+	</h1>
 
-        <!-- Content Row -->
-        <div class="row">
+	<!-- Content Row -->
+	<div class="row">
 
-            <div class="col-xl-8 col-lg-7">
+		<div
+			class="col-xl-8 col-lg-7">
 
-                <!-- Area Chart -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">{% trans %}Les chiffres{% endtrans %} </h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="row mb-4">
-                        
-                            <!-- Petite taches terminées -->
-                            <div class="col">
-                                <div class="card border-left-success shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{% trans %}Petite tâches terminées{% endtrans %} 
-                                                </div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbpetite }}</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Moyenne taches terminées -->
-                            <div class="col">
-                                <div class="card border-left-warning shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{% trans %}Moyenne tâches terminées{% endtrans %} 
-                                                </div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{chiffre.nbmoyen}}</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Grande taches terminées -->
-                            <div class="col">
-                                <div class="card border-left-danger shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">{% trans %}Grande tâches terminées{% endtrans %} 
-                                                </div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbgrande }}</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+			<!-- Area Chart -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">{% trans %}Les chiffres{% endtrans %}
+					</h6>
+				</div>
+				<div class="card-body">
+					<div
+						class="row mb-4">
 
-                        <div class="row mb-4">
-                            <!-- Earnings (Annual) Card Example -->
-                            <div class="col">
-                                <div class="card border-left-success shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                   {% trans %}Total petite tâche{% endtrans %} </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalpetite }} €</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+						<!-- Petite taches terminées -->
+						<div class="col">
+							<div class="card border-left-success shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-success text-uppercase mb-1">{% trans %}Petite tâches terminées{% endtrans %}
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="col-auto">
+													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbpetite }}</div>
+												</div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+											</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <!-- Earnings (Annual) Card Example -->
-                            <div class="col">
-                                <div class="card border-left-warning shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                   {% trans %}Total moyenne tâche{% endtrans %} </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalmoyen }} €</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+						<!-- Moyenne taches terminées -->
+						<div class="col">
+							<div class="card border-left-warning shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{% trans %}Moyenne tâches terminées{% endtrans %}
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="col-auto">
+													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{chiffre.nbmoyen}}</div>
+												</div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+											</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            </div>
-                            <!-- Earnings (Annual) Card Example -->
-                            <div class="col">
-                                <div class="card border-left-danger shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                                   {% trans %}total grande tâche{% endtrans %} </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalgrande }} €</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+						<!-- Grande taches terminées -->
+						<div class="col">
+							<div class="card border-left-danger shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">{% trans %}Grande tâches terminées{% endtrans %}
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="col-auto">
+													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chiffre.nbgrande }}</div>
+												</div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+											</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                        </div>
-                            <!-- Earnings (Annual) Card Example -->
-                            <div class="col">
-                                <div class="card border-left-info shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                   {% trans %}Chiffre d'Affaire{% endtrans %} </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ totalAffaire }} €</div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+					<div
+						class="row mb-4">
+						<!-- Earnings (Annual) Card Example -->
+						<div class="col">
+							<div class="card border-left-success shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+												{% trans %}Total petite tâche{% endtrans %}
+											</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalpetite }}
+												€</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                           
-                        </div>
-                </div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Earnings (Annual) Card Example -->
+						<div class="col">
+							<div class="card border-left-warning shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+												{% trans %}Total moyenne tâche{% endtrans %}
+											</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalmoyen }}
+												€</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Earnings (Annual) Card Example -->
+						<div class="col">
+							<div class="card border-left-danger shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+												{% trans %}total grande tâche{% endtrans %}
+											</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">{{ chiffre.totalgrande }}
+												€</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Earnings (Annual) Card Example -->
+					<div class="col">
+						<div class="card border-left-info shadow h-100 py-2">
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<div class="col mr-2">
+										<div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+											{% trans %}Chiffre d'Affaire{% endtrans %}
+										</div>
+										<div class="h5 mb-0 font-weight-bold text-gray-800">{{ totalAffaire }}
+											€</div>
+									</div>
+									<div class="col-auto">
+										<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
+		</div>
 
-            </div>
+		<!-- Donut Chart -->
+		<div class="col-xl-4 col-lg-7">
+			<div
+				class="card shadow">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">{% trans %}Graphique{% endtrans %}
+					</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body">
 
-            <!-- Donut Chart -->
-            <div class="col-xl-4 col-lg-7">
-                <div class="card shadow">
-                    <!-- Card Header - Dropdown -->
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">{% trans %}Graphique{% endtrans %} </h6>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        
-                        <canvas id="myChart"></canvas>
-                        
+					<canvas id="myChart"></canvas>
 
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
-    <!-- /.container-fluid -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- /.container-fluid -->
+
 
 
 

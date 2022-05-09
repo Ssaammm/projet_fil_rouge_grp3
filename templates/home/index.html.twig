@@ -2,117 +2,152 @@
 
 {% block javascripts %}
 
-<script src="js/meteo.js"></script>
-<script src="../js/jquery-3.6.0.js"></script>
- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/meteo.js"></script>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-   
+	<!-- Core plugin JavaScript-->
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script> 
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
 
 {% endblock %}
 
 {% block stylesheets %}
 
- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="css/meteo.css" rel="stylesheet">
-<link href="css/user.css" rel="stylesheet">
-			
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/meteo.css" rel="stylesheet">
+	<link href="css/user.css" rel="stylesheet">
+
 {% endblock %}
 
 {% block body %}
-{# lien css #}
+	{# lien css #}
 
 
-{# affichage #}
-<head>
- </head>
-<body>
+	{# affichage #}<head>
+	</head>
+		<body>
 
-  {# card meteo #}
-<div class="container-heure-meteo">
-	<div class="container" id="meteo">
-		{# div meteo #}
-		<div class="background">
-			<div class="Circle1"></div>
-			<div class="Circle2"></div>
-			<div class="Circle3"></div>
-			<div class="content">
-				<h1 class="Temp" id="temp"></h1>
-				<h1 class="Time" id="time"></h1>
-				<h1 class="Location" id="location">
-					<i class="material-icons locationIcon">place</i>
-				</h1>
+		{# card meteo #}
+			<div class="container-heure-meteo"> <div
+				class="container" id="meteo">
+				{# div meteo #}
+				<div class="background">
+					<div class="Circle1"></div>
+					<div class="Circle2"></div>
+					<div class="Circle3"></div>
+					<div class="content">
+						<h1 class="Temp" id="temp"></h1>
+						<h1 class="Time" id="time"></h1>
+						<h1 class="Location" id="location">
+							<i class="material-icons locationIcon">place</i>
+						</h1>
+					</div>
+				</div>
 			</div>
+			{# div heure #}
+			<div class="heure">
+				<div class="date-card">
+					<div class="day">
+						{{jour}}
+					</div>
+					<div>
+						<div class="month">
+							{{mois}}
+						</div>
+						<div class="year">
+							{{annee}}
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
-  </div>
-	  {# div heure #}
-	<div class="heure">
-      <div class="date-card">
-  <div class="day"> {{jour}} </div>
-  <div>
-     <div class="month"> {{mois}} </div>
-    <div class="year"> {{annee}} </div>
-  </div>
-</div>
-  </div>
-  
-</div>
-{# card infos user #}
+		{# card infos user #}
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link
+		rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-{# start #}
-<div class="container">
-{# 1 infos utilisateur #}
-  <div class="box border border-secondary">
-    
-    <div class="content">
-      <img src="img/avatar.png" alt="">
-      <p><strong class ="badge" style="background-color: #509bfc; color:#ffff;">Nom:</strong> <span class="badge bg-warning"> ??????? </span> </p>
-      <p><strong class ="badge" style="background-color: #509bfc; color:#ffff;">Prenom:</strong> <span class="badge bg-warning"> ??????? </span> </p>
-      <p><strong class ="badge" style="background-color: #509bfc; color:#ffff;">Email:</strong><span class="badge bg-warning"> ??????? </span></p>
-      <p><strong class ="badge" style="background-color: #509bfc; color:#ffff;">Roles:</strong> <span class="badge bg-warning"> ??????? </span> </p>
-    </div>
-    
-  </div>
+		{# start #}
+		<div
+			class="container">
+			{# 1 infos utilisateur #}
+			<div class="box border border-secondary">
 
-    {# Config affichage nombre maximum de tâches #}
-    {# Si expert #}
-    {% if role == 'ROLE_EXPERT' %}
-    {% set max_tache = 5 %}
-    {% endif %}
-    {# Si senior #}
-    {% if role == 'ROLE_SENIOR' %}
-    {% set max_tache = 3 %}
-    {% endif %}
-    {# Si apprenti #}
-    {% if role == 'ROLE_APPRENTI' %}
-    {% set max_tache = 1 %}
-    {% endif %}
-    {# 2 informations tache en cours#}
+				<div class="content">
+					<img src="img/avatar.png" alt="">
+					<p>
+						<strong class="badge" style="background-color: #509bfc; color:#ffff;">Nom:</strong>
+						<span class="badge bg-warning">
+							???????
+						</span>
+					</p>
+					<p>
+						<strong class="badge" style="background-color: #509bfc; color:#ffff;">Prenom:</strong>
+						<span class="badge bg-warning">
+							???????
+						</span>
+					</p>
+					<p>
+						<strong class="badge" style="background-color: #509bfc; color:#ffff;">Email:</strong>
+						<span class="badge bg-warning">
+							???????
+						</span>
+					</p>
+					<p>
+						<strong class="badge" style="background-color: #509bfc; color:#ffff;">Roles:</strong>
+						<span class="badge bg-warning">
+							???????
+						</span>
+					</p>
+				</div>
 
-  <div class="box border border-secondary">
-    <strong id="nb_tache"> <span class="badge bg-primary">{{ nb_task }} / {{max_tache}} </span></strong>
-    <p id= "txt_tache" class ="badge" style="background-color: #509bfc; color:#ffff;">Tâches en cours</p>
-  </div>
+			</div>
 
-{# 3 informations nombres tâches effectuées#}
-  <div class="box border border-secondary">
-    <strong id="nb_tache"><span class="badge bg-primary">{{nb_task_finished}}</span></strong>
-    <p id= "txt_tache" class ="badge" style="background-color: #509bfc; color:#ffff;">Tâches effectuées</p>
-  </div>
-  {# end #}
-</div>
+			{# Config affichage nombre maximum de tâches #}
+			{# Si expert #}
+			{% if role == 'ROLE_EXPERT' %}
+				{% set max_tache = 5 %}
+			{% endif %}
+			{# Si senior #}
+			{% if role == 'ROLE_SENIOR' %}
+				{% set max_tache = 3 %}
+			{% endif %}
+			{# Si apprenti #}
+			{% if role == 'ROLE_APPRENTI' %}
+				{% set max_tache = 1 %}
+			{% endif %}
+			{# 2 informations tache en cours#}
 
-  
-</body>
-{# lien javascript #}
+			<div class="box border border-secondary">
+				<strong id="nb_tache">
+					<span class="badge bg-primary">{{ nb_task }}
+						/
+						{{max_tache}}
+					</span>
+				</strong>
+				<p id="txt_tache" class="badge" style="background-color: #509bfc; color:#ffff;">Tâches en cours</p>
+			</div>
+
+			{# 3 informations nombres tâches effectuées#}
+			<div class="box border border-secondary">
+				<strong id="nb_tache">
+					<span class="badge bg-primary">{{nb_task_finished}}</span>
+				</strong>
+				<p id="txt_tache" class="badge" style="background-color: #509bfc; color:#ffff;">Tâches effectuées</p>
+			</div>
+			{# end #}
+		</div>
+
+
+	</body>
+	{# lien javascript #}
 
 {% endblock %}
+
