@@ -15,7 +15,7 @@ class SecurityController extends AbstractController
     public function redirection() {
 
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_task_affichage');
+            return $this->redirectToRoute('app_home');
         } else {
             return $this->redirectToRoute('app_login');
         }
