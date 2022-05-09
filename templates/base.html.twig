@@ -200,13 +200,13 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <div class="container"> 
-                                {% for locale in locales %}
-                                    {% if locale != app.request.locale %}
-                                        <a class="nav-link" href="{{ path('app_change_locale', {'locale': locale}) }}">{{ locale }}</a>
-                                    {% endif %}    
-                                {% endfor %}
+                        {% for locale in locales %}
+                            {% if locale != app.request.locale %}
+                                <a class="nav-link" href="{{path('app_change_locale',{'locale': locale })}}">{{locale}}</a>
+                            {% endif %}
+                        {% endfor %}
                                
-                                                    
+                                                   
                         </div>
                         <div class="topbar-divider d-none d-sm-block"></div>
                         

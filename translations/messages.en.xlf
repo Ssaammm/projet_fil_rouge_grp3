@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -272,6 +272,14 @@
       <trans-unit id="t8_nMCO" resname="Prenom">
         <source>Prenom</source>
         <target>First-name</target>
+      </trans-unit>
+      <trans-unit id="g4oIN3r" resname="&quot;Entre ton adresse mail...&quot;">
+        <source>"Entre ton adresse mail..."</source>
+        <target>"Enter your adress mail..."</target>
+      </trans-unit>
+      <trans-unit id="Eg5BJiW" resname="&quot;Entre ton mot-de-passe...&quot;">
+        <source>"Entre ton mot-de-passe..."</source>
+        <target>"Enter your password..."</target>
       </trans-unit>
     </body>
   </file>

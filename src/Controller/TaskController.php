@@ -39,17 +39,19 @@ class TaskController extends AbstractController
     /**
      * @Route("/new", name="app_task_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, TaskRepository $taskRepository, ClientRepository $clientRepository): Response
+    public function new(Request $request, TaskRepository $taskRepository, ClientRepository $clientRepository, StatusRepository $statusRepository): Response
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
+        $status = $statusRepository->find(1);
 
         $client = new Client();
         $form2 = $this->createForm(ClientType::class, $client);
         $form2->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $task->setStatus($status);
             $taskRepository->add($task);
             return $this->redirectToRoute('app_task_index', [], Response::HTTP_SEE_OTHER);
         }

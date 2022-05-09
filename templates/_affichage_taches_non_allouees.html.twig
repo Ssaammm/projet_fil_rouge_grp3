@@ -38,11 +38,11 @@
            	<div class="container-fluid">
 				<div class="row"> 
 					{% for user in tasks|filter(user => user.user == NULL)|sort((a , b) => a.client.nom <=> b.client.nom) %}
-                		<div class="col-xl-4 col-lg-4 col-md-6 d-flex align-items-stretch">
+                		
 			
 
 								<!-- Basic Card Example -->
-								<div class="card shadow m-4">
+								<div class="card shadow  m-3 col-md-12 col-lg-4 col-xl-3">
 									<div class="card-header py-3">
 										<h6 class="m-0 font-weight-bold text-primary">{% trans %}Client :{% endtrans %}  {{ (user.client.nom) }} {{ (user.client.prenom) }}</h6>
 									</div>
@@ -57,7 +57,7 @@
 									</div>
 								</div>
 							
-                        </div>                       
+                                              
 					 
 				{% endfor %}
 				</div>

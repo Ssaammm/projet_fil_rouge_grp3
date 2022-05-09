@@ -50,19 +50,19 @@
                                         
 
                                 
-                                            <h1 class="mb-5 font-weight-normal text-center">Connexion</h1>
+                                            <h1 class="mb-5 font-weight-normal text-center">Connexion </h1>
                                             <label for="inputEmail">Email</label>
-                                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-user" autocomplete="email" placeholder="Enter Email Address..." required autofocus>
-                                            <label for="inputPassword">{% trans %}Mot-de-passe{% endtrans %} </label>
-                                            <input type="password" name="password" id="inputPassword" class="form-control form-control-user" autocomplete="current-password" placeholder="Password" required>
+                                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-user mb-3" autocomplete="email" placeholder="Entre ton adresse mail..." required autofocus>
+                                            <label for="inputPassword">Mot-de-passe </label>
+                                            <input type="password" name="password" id="inputPassword" class="form-control form-control-user" autocomplete="current-password" placeholder="Entre ton mot-de-passe..." required>
 
                                             <input type="hidden" name="_csrf_token"
                                                 value="{{ csrf_token('authenticate') }}">
 
 
 
-                                        <button class="btn btn-primary btn-user btn-block" type="submit">
-                                            {% trans %}Connexion{% endtrans %} 
+                                        <button class="btn btn-primary btn-user btn-block mt-4" type="submit">
+                                           Connexion
                                         </button>
                                             </div>       
                                         </div>
