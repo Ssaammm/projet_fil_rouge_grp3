@@ -27,7 +27,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class TaskController extends AbstractController
 {
     /**
-     * @Route("/", name="app_task_index", methods={"GET"})
+     * @Route("/task", name="app_task_index", methods={"GET"})
      */
     public function index(TaskRepository $taskRepository): Response
     {
@@ -46,6 +46,7 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
         $status = $statusRepository->find(1);
 
+        $statut = $statusRepository->find(1);
         $client = new Client();
         $form2 = $this->createForm(ClientType::class, $client);
         $form2->handleRequest($request);
@@ -53,6 +54,7 @@ class TaskController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $task->setStatus($status);
             $taskRepository->add($task);
+
             return $this->redirectToRoute('app_task_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -275,18 +277,21 @@ class TaskController extends AbstractController
         if ($tasks->getType()=="PETITE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbPetite($chiffre->getNbPetite()+1);
+            $task->setUser(null);
             $manager->persist($chiffre);
 
         }
         elseif ($tasks->getType()=="MOYENNE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbMoyen($chiffre->getNbMoyen()+1);
+            $task->setUser(null);
             $manager->persist($chiffre);
 
         }
         elseif ($tasks->getType()=="GROSSE") {
             $chiffre = $doctrine->getRepository(ChiffreAffaire::class)->find(1);
             $chiffre->setNbGrande($chiffre->getNbGrande()+1);
+            $task->setUser(null);
             $manager->persist($chiffre);
 
         }

@@ -15,7 +15,7 @@ $(document).ready(function () {
         noResults: function (params) {
           setTimeout(function(){
             $('#bouton_modal').click();
-          },1000); 
+          },3000); 
           return 'Aucun client, veuilliez patientez'
         }
       }

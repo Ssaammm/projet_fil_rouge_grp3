@@ -19,6 +19,17 @@
 
 {% block body %}
 
+{% for message in app.flashes('failed') %}
+				<div class="flash-notice">
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="btn" data-dismiss="alert">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only"></span>
+						</button>&nbsp{{ message }}
+				</div>
+				</div>
+			{% endfor %}
+
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800 ml-5 m-3">{% trans %}Liste des utilisateurs{% endtrans %} </h1>
 	</div>
@@ -56,7 +67,7 @@
                 processing: '<div class="d-flex justify-content-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden"></span></div></div>'
                 },
                 type: "GET",
-                ajax: 'http://127.0.0.1:8000/uti',
+                ajax: 'https://localhost:8000/uti',
                 oLanguage:{
                   sSearch: {% trans %}"Rechercher"{% endtrans %},
                   sLengthMenu: {% trans %}"Afficher _MENU_ lignes"{% endtrans %},
