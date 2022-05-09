@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id=".QGVx0V" resname="Nouvelle operation">
+        <source>Nouvelle operation</source>
+        <target>new operation</target>
+      </trans-unit>
+      <trans-unit id="jH4Hzp2" resname="Tâches">
+        <source>Tâches</source>
+        <target>Task</target>
+      </trans-unit>
+      <trans-unit id="GvFC7pY" resname="Gestion">
+        <source>Gestion</source>
+        <target>management</target>
+      </trans-unit>
+      <trans-unit id="_k8.Udi" resname="Opérations">
+        <source>Opérations</source>
+        <target>Operations</target>
+      </trans-unit>
+      <trans-unit id="AEMwpNS" resname="Opérations non assignées">
+        <source>Opérations non assignées</source>
+        <target>Unassigned operations</target>
+      </trans-unit>
+      <trans-unit id="xvQzF2y" resname="Opérations en cours">
+        <source>Opérations en cours</source>
+        <target>Operations in progress</target>
+      </trans-unit>
+      <trans-unit id="sfw6nTQ" resname="Mes operations">
+        <source>Mes operations</source>
+        <target>My operations</target>
+      </trans-unit>
+      <trans-unit id="bFJ6axo" resname="Operations terminées">
+        <source>Operations terminées</source>
+        <target>completed operations</target>
+      </trans-unit>
+      <trans-unit id="7axpK40" resname="Nouvel utilisateur">
+        <source>Nouvel utilisateur</source>
+        <target>New user</target>
+      </trans-unit>
+      <trans-unit id="nlYBj45" resname="Chiffre d'affaire">
+        <source>Chiffre d'affaire</source>
+        <target>Turnover</target>
+      </trans-unit>
+      <trans-unit id="nYE_eDo" resname="Liste utilisateurs">
+        <source>Liste utilisateurs</source>
+        <target>Users list</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="QykQI.B" resname="Au revoir !">
+        <source>Au revoir !</source>
+        <target>Good Bye !</target>
+      </trans-unit>
+      <trans-unit id="3ZrROFE" resname="êtes-vous sûr de vouloir vous déconnecter ?">
+        <source>êtes-vous sûr de vouloir vous déconnecter ?</source>
+        <target>Are you sure you want to logout ?</target>
+      </trans-unit>
+      <trans-unit id="7yOllAJ" resname="Retour">
+        <source>Retour</source>
+        <target>Return</target>
+      </trans-unit>
+      <trans-unit id="isZ.daF" resname="Chiffre d'Affaire">
+        <source>Chiffre d'Affaire</source>
+        <target>Turnover</target>
+      </trans-unit>
+      <trans-unit id="waL4Aq1" resname="Les chiffres">
+        <source>Les chiffres</source>
+        <target>Numbers</target>
+      </trans-unit>
+      <trans-unit id="C61jvjj" resname="Petite tâches terminées">
+        <source>Petite tâches terminées</source>
+        <target>Small tasks completed</target>
+      </trans-unit>
+      <trans-unit id="9aUT9J3" resname="Moyenne tâches terminées">
+        <source>Moyenne tâches terminées</source>
+        <target>Medium tasks completed</target>
+      </trans-unit>
+      <trans-unit id="5f14Jm_" resname="Grande tâches terminées">
+        <source>Grande tâches terminées</source>
+        <target>Big tasks completed</target>
+      </trans-unit>
+      <trans-unit id="vp_75Om" resname="Total petite tâche">
+        <source>Total petite tâche</source>
+        <target>Total small tasks</target>
+      </trans-unit>
+      <trans-unit id="mbS.Wmd" resname="Total moyenne tâche">
+        <source>Total moyenne tâche</source>
+        <target>Total medium tasks</target>
+      </trans-unit>
+      <trans-unit id="vdwg2ob" resname="total grande tâche">
+        <source>total grande tâche</source>
+        <target>total big taks</target>
+      </trans-unit>
+      <trans-unit id="7wBpkf1" resname="Graphique">
+        <source>Graphique</source>
+        <target>Chart</target>
+      </trans-unit>
+      <trans-unit id="B5PW8Iu" resname="Modifier l'utilisateur">
+        <source>Modifier l'utilisateur</source>
+        <target>Edit user</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Registration</target>
+      </trans-unit>
+      <trans-unit id="FAP3n5K" resname="Appliquer la modification">
+        <source>Appliquer la modification</source>
+        <target>Accept the change </target>
+      </trans-unit>
+      <trans-unit id="zYX77Mj" resname="Supprimer l'utilisateur">
+        <source>Supprimer l'utilisateur</source>
+        <target>Delete user</target>
+      </trans-unit>
+      <trans-unit id="YzeRpzQ" resname="Mot-de-passe">
+        <source>Mot-de-passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="Cgxo5RT" resname="Créer une nouvelle tâche">
+        <source>Créer une nouvelle tâche</source>
+        <target>Create a new task</target>
+      </trans-unit>
+      <trans-unit id="FRqq2KO" resname="Creer un nouveau client">
+        <source>Creer un nouveau client</source>
+        <target>Create a new customer</target>
+      </trans-unit>
+      <trans-unit id="cdx0hz4" resname="Enregistrer">
+        <source>Enregistrer</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="Rq05Fva" resname="Annuler">
+        <source>Annuler</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="NGdqgWZ" resname="Liste des utilisateurs">
+        <source>Liste des utilisateurs</source>
+        <target>Users list</target>
+      </trans-unit>
+      <trans-unit id="ra8xNAj" resname="Mes opérations">
+        <source>Mes opérations</source>
+        <target>My operations</target>
+      </trans-unit>
+      <trans-unit id=".rWbff7" resname="Client :">
+        <source>Client :</source>
+        <target>Customer :</target>
+      </trans-unit>
+      <trans-unit id="bMWtLkf" resname="Type:">
+        <source>Type:</source>
+        <target>Type:</target>
+      </trans-unit>
+      <trans-unit id="4bsTlyB" resname="Tarification:">
+        <source>Tarification:</source>
+        <target>Pricing:</target>
+      </trans-unit>
+      <trans-unit id="tNklKPh" resname="Terminer">
+        <source>Terminer</source>
+        <target>Done</target>
+      </trans-unit>
+      <trans-unit id="RO7C56n" resname="Fait par :">
+        <source>Fait par :</source>
+        <target>Made by :</target>
+      </trans-unit>
+      <trans-unit id="qQLczgi" resname="Attribution">
+        <source>Attribution</source>
+        <target>Assign</target>
+      </trans-unit>
+      <trans-unit id="E0s62LX" resname="Opérations terminées">
+        <source>Opérations terminées</source>
+        <target>Completed operations</target>
+      </trans-unit>
+      <trans-unit id="9xfA_Gy" resname=" sur ">
+        <source> sur </source>
+        <target> on </target>
+      </trans-unit>
+      <trans-unit id=".Q2k26g" resname=" tâches en cours, votre limite est de ">
+        <source> tâches en cours, votre limite est de </source>
+        <target> tasks in progress, your limit is </target>
+      </trans-unit>
+      <trans-unit id="JlgpKrA" resname="Tâche attribué! Nombre de tâches : ">
+        <source>Tâche attribué! Nombre de tâches : </source>
+        <target>Task assigned! Number of tasks : </target>
+      </trans-unit>
+      <trans-unit id="nfvQ2uF" resname="Impossible, vous avez ">
+        <source>Impossible, vous avez </source>
+        <target>Impossible, you have </target>
+      </trans-unit>
+      <trans-unit id="vsHEaP5" resname="&quot;Afficher _MENU_ lignes&quot;">
+        <source>"Afficher _MENU_ lignes"</source>
+        <target>"Show _MENU_ entries"</target>
+      </trans-unit>
+      <trans-unit id="L4tSBgb" resname="&quot;Rechercher&quot;">
+        <source>"Rechercher"</source>
+        <target>"Search"</target>
+      </trans-unit>
+      <trans-unit id="5LNfQNz" resname="&quot;Lignes _START_ à _END_ sur _TOTAL_&quot;">
+        <source>"Lignes _START_ à _END_ sur _TOTAL_"</source>
+        <target>"Showing _START_ to _END_ of _TOTAL_"</target>
+      </trans-unit>
+      <trans-unit id="If.Xpku" resname="&quot;Suivant&quot;">
+        <source>"Suivant"</source>
+        <target>"Next"</target>
+      </trans-unit>
+      <trans-unit id="3yNgkUX" resname="&quot;Précédent&quot;">
+        <source>"Précédent"</source>
+        <target>"Previous"</target>
+      </trans-unit>
+      <trans-unit id="UJZhdBG" resname="&quot;Aucune ligne affichée&quot;">
+        <source>"Aucune ligne affichée"</source>
+        <target>"no line found"</target>
+      </trans-unit>
+      <trans-unit id="BIlfQt0" resname="&quot;Aucun résultat trouvé&quot;">
+        <source>"Aucun résultat trouvé"</source>
+        <target>"no results found"</target>
+      </trans-unit>
+      <trans-unit id="o8skIhH" resname="&quot;(Filtrer un maximum de_MAX_)&quot;">
+        <source>"(Filtrer un maximum de_MAX_)"</source>
+        <target>"(Filter a maximum of_MAX_)"</target>
+      </trans-unit>
+      <trans-unit id="7wMB0ME" resname="&quot;nom&quot;">
+        <source>"nom"</source>
+        <target>"name"</target>
+      </trans-unit>
+      <trans-unit id="ZudBVFI" resname="&quot;prenom&quot;">
+        <source>"prenom"</source>
+        <target>"first-name"</target>
+      </trans-unit>
+      <trans-unit id="mXtpjqt" resname="'Petite'">
+        <source>'Petite'</source>
+        <target>'Small '</target>
+      </trans-unit>
+      <trans-unit id="W1JUY7g" resname="'Moyenne'">
+        <source>'Moyenne'</source>
+        <target>'Medium '</target>
+      </trans-unit>
+      <trans-unit id="pqpr6yT" resname="'Grosse'">
+        <source>'Grosse'</source>
+        <target>'Big '</target>
+      </trans-unit>
+      <trans-unit id="DHf_Cas" resname="Client">
+        <source>Client</source>
+        <target>Customer</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="BFjc3ZF" resname="Déscription">
+        <source>Déscription</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="eeXPIN4" resname="Adresse">
+        <source>Adresse</source>
+        <target>Adress</target>
+      </trans-unit>
+      <trans-unit id="t8_nMCO" resname="Prenom">
+        <source>Prenom</source>
+        <target>First-name</target>
+      </trans-unit>
+      <trans-unit id="g4oIN3r" resname="&quot;Entre ton adresse mail...&quot;">
+        <source>"Entre ton adresse mail..."</source>
+        <target>"Enter your adress mail..."</target>
+      </trans-unit>
+      <trans-unit id="Eg5BJiW" resname="&quot;Entre ton mot-de-passe...&quot;">
+        <source>"Entre ton mot-de-passe..."</source>
+        <target>"Enter your password..."</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

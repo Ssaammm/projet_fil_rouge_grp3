@@ -20,19 +20,19 @@ class ChiffreAffaireController extends AbstractController
 
         if ($chiffre->getNbPetite() !== 0 || $chiffre->getNbMoyen() !== 0 || $chiffre->getNbGrande() !== 0) {
 
-        $chiffre->setTotalPetite($chiffre->getNbPetite()*1000);
-        $chiffre->setTotalMoyen($chiffre->getNbMoyen()*2500);
-        $chiffre->setTotalGrande($chiffre->getNbGrande()*10000);
+            $chiffre->setTotalPetite($chiffre->getNbPetite()*1000);
+            $chiffre->setTotalMoyen($chiffre->getNbMoyen()*2500);
+            $chiffre->setTotalGrande($chiffre->getNbGrande()*10000);
 
-        $totalChiffre = $chiffre->getNbPetite()+$chiffre->getNbMoyen()+$chiffre->getNbGrande();
-        $chiffre->setPourcPetite(number_format((($chiffre->getNbPetite()/$totalChiffre)*100),2));
-        $chiffre->setPourcMoyen(($chiffre->getNbMoyen()/$totalChiffre)*100);
-        $chiffre->setPourcGrande(($chiffre->getNbGrande()/$totalChiffre)*100);
+            $totalChiffre = $chiffre->getNbPetite()+$chiffre->getNbMoyen()+$chiffre->getNbGrande();
+            $chiffre->setPourcPetite(number_format((($chiffre->getNbPetite()/$totalChiffre)*100),2));
+            $chiffre->setPourcMoyen(($chiffre->getNbMoyen()/$totalChiffre)*100);
+            $chiffre->setPourcGrande(($chiffre->getNbGrande()/$totalChiffre)*100);
 
-        $manager->persist($chiffre);
-        $manager->flush($chiffre);
-    
-    }
+            $manager->persist($chiffre);
+            $manager->flush($chiffre);
+        
+        }
 
         $totalAffaire = $chiffre->getTotalPetite()+$chiffre->getTotalMoyen()+$chiffre->getTotalGrande();
         
