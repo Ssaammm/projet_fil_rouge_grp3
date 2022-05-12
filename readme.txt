@@ -39,10 +39,11 @@ APPLICATION PROPAR
 		   => Petite manœuvre (1000€)
 
 
-CONDITIONS:
+Pré-requis:
 
 	=> PHP 7.4
 	=> Symfony 5.1
+	=> MySQL
 	
 
 INSTALLATION:
